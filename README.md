@@ -2,9 +2,8 @@ My vim config.
 
 Installation:
 
+    # clone repo
     git clone https://github.com/prendradjaja/vim-config.git ~/.vim
-
-Create symlinks:
-
+    # create symlinks
     ln -s ~/.vim/.vimrc ~/.vimrc
     ln -s ~/.vim/.gvimrc ~/.gvimrc
