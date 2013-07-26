@@ -9,8 +9,6 @@ if s:location==#s:HOME
 elseif s:location==#s:CYGWIN
   set runtimepath^=/cygdrive/c/users/pandu/dropbox/vim-plug
   set runtimepath^=/cygdrive/c/users/pandu/dropbox/.vim
-elseif s:location==#s:LAB
-  set runtimepath^=~/.vim
 endif
 
 " Plugins
