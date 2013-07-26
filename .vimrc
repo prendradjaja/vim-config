@@ -142,8 +142,10 @@ vnoremap <Leader>>< :retab!<CR>
 " General settings
 syntax on
 set lbr
-if s:location==#s:HOME || s:location==#s:CYGWIN
+if exists('&relativenumber')
   set relativenumber
+else
+  set number
 endif
 nnoremap <silent> <Leader>n :call ToggleRelativeNumber()<CR>
 nnoremap <silent> <Leader>N :call ToggleNumber()<CR>
