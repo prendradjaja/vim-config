@@ -119,9 +119,9 @@ noremap <M-k> k<C-y>
 " Save session
 nnoremap <Leader>ws :mks! ~\vimsessions\
 
-" 80-char limit
+" 80-char limit (actually 78)
 map <silent> <Leader>8 :set cc=<CR>:set tw=0<CR>:echo "no!80char"<CR>
-map <silent> <Leader>* :let &colorcolumn=join(range(81,999),",")<CR>:set textwidth=80<CR>:echo "  !80char"<CR>
+map <silent> <Leader>* :let &colorcolumn=join(range(79,999),",")<CR>:set textwidth=78<CR>:echo "  !80char"<CR>
 
 " 72-char limit
 map <silent> <Leader>7 :set cc=<CR>:set tw=0<CR>:echo "no!72char"<CR>
