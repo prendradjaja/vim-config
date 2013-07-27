@@ -58,6 +58,9 @@ nnoremap <Leader>eb :set hlsearch<CR>/<\(.\<Bar>\n\)\{-}><CR>
 " newline with bullets. [o]pen [b]ullet
 inoremap <C-Space><C-M> <C-M>- 
 nnoremap <Leader>ob o- 
+nnoremap <Leader>Ob O- 
+nnoremap <Leader>OB O- 
+nnoremap <Leader>oB O- 
 
 function! CopyAndOpenPaint(name)
   let filename = a:name . ".png"
