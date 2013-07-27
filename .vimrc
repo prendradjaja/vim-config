@@ -225,8 +225,6 @@ nnoremap <M-T> :bnext<CR>
 
 " Escape insert mode
 inoremap <C-c> <Esc>
-"inoremap jk <Esc>
-"inoremap kj <Esc>
 
 " Misc mappings
 nnoremap <Leader>ou O<Esc>O
@@ -238,11 +236,9 @@ noremap ' `
 noremap ` '
 map <C-@> @q
 imap <M-w> <C-\><C-o>dB
-"imap <C-w> <C-\><C-o>db
 map <M--> <C-w>-
 map <M-=> <C-w>+
 nnoremap <Leader>ls hs<C-m><Esc>
-"nnoremap G Gzz
 noremap s /
 noremap S ?
 nnoremap gc :echo getchar()<CR>
@@ -254,10 +250,6 @@ cnoremap <C-P> <Up>
 
 " Easier access to unnamed register
 noremap! <C-R>' <C-R>"
-
-" Black hole register
-"nnoremap <Leader>h "_
-"vnoremap <Leader>h "_
 
 " System clipboard shortcuts and such nonsense
 noremap <Leader>sa ggVG
