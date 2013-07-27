@@ -239,8 +239,6 @@ imap <M-w> <C-\><C-o>dB
 map <M--> <C-w>-
 map <M-=> <C-w>+
 nnoremap <Leader>ls hs<C-m><Esc>
-noremap s /
-noremap S ?
 nnoremap gc :echo getchar()<CR>
 nnoremap <Leader>sw :set wrap!<CR>
 
