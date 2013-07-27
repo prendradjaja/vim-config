@@ -16,6 +16,8 @@ execute pathogen#infect()
 runtime next_motion_mapping.vim
 runtime teleport/teleport.vim
 
+let g:EasyMotion_leader_key = '<Leader>u'
+
 map <Space> <Leader>
 
 " Source me
