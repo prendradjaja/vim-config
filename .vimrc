@@ -120,9 +120,6 @@ noremap <M-k> k<C-y>
 nnoremap <Leader>ws :mks! ~\vimsessions\
 
 " 80-char limit
-highlight ColorColumn guibg=lightgrey
-"let &colorcolumn=join(range(81,999),",")
-"set textwidth=80
 map <silent> <Leader>8 :set cc=<CR>:set tw=0<CR>:echo "no!80char"<CR>
 map <silent> <Leader>* :let &colorcolumn=join(range(81,999),",")<CR>:set textwidth=80<CR>:echo "  !80char"<CR>
 
