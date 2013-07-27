@@ -123,6 +123,10 @@ nnoremap <Leader>ws :mks! ~\vimsessions\
 map <silent> <Leader>8 :set cc=<CR>:set tw=0<CR>:echo "no!80char"<CR>
 map <silent> <Leader>* :let &colorcolumn=join(range(81,999),",")<CR>:set textwidth=80<CR>:echo "  !80char"<CR>
 
+" 72-char limit
+map <silent> <Leader>7 :set cc=<CR>:set tw=0<CR>:echo "no!72char"<CR>
+map <silent> <Leader>& :let &colorcolumn=join(range(73,999),",")<CR>:set textwidth=72<CR>:echo "  !72char"<CR>
+
 " Change indentation settings
 nnoremap <silent> <Leader>i1 :set ts=1<CR>:set sw=1<CR>:echo "  sw,tw=1"<CR>
 nnoremap <silent> <Leader>i2 :set ts=2<CR>:set sw=2<CR>:echo "  sw,tw=2"<CR>
