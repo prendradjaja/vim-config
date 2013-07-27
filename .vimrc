@@ -106,6 +106,9 @@ nnoremap <Leader>oD O<Esc>i
 " Open new lines but keep cursor position
 nnoremap <Leader>os ma20o<Esc>`a
 
+" Open new line, Lisp-style
+nnoremap <Leader>ol :set lisp<CR>o <C-O>:set nolisp<CR><C-H>
+
 " Scroll and move cursor
 noremap <M-j> j<C-e>
 noremap <M-k> k<C-y>
