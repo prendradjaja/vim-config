@@ -12,6 +12,7 @@ elseif s:location==#s:CYGWIN
 endif
 
 " Plugins
+execute pathogen#infect()
 runtime next_motion_mapping.vim
 runtime teleport/teleport.vim
 
