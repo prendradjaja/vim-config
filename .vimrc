@@ -222,7 +222,6 @@ endif
 nnoremap <M-H> :bprevious<CR>
 nnoremap <M-T> :bnext<CR>
 
-
 " Escape insert mode
 inoremap <C-c> <Esc>
 
@@ -466,6 +465,12 @@ function! EvalRange(start, end)
   execute a:start . "," . a:end . " g/./call EvalLine()"
 endfunction
 command! -range Eval call EvalRange(<line1>, <line2>)
+
+function! Reverse(start, end)
+  let top=a:start-1
+  execute a:start . "," . a:end . " g/^/m" . top
+endfunction
+command! -range Reverse call Reverse(<line1>, <line2>)
 
 " [s]mart [j]oin lines like these:
 "           goodbye
