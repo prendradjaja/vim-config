@@ -226,7 +226,7 @@ inoremap <C-c> <Esc>
 
 " Misc mappings
 nnoremap <Leader>ou O<Esc>O
-nnoremap <Leader>oh :set ve=all<CR>mzo<Esc>`zji
+nnoremap <Leader>oh :set ve=all<CR>mzo<Esc>`zji.<BS><C-O>:se ve=<CR>
 noremap ~ !
 noremap ! ~
 noremap g! g~
