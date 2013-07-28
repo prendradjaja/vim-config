@@ -23,7 +23,7 @@ nnoremap <leader>gc :source $MYGVIMRC<CR>
 
 " Open me in new split
 if s:location==#s:HOME
-  noremap <Leader>erc :split ~\Dropbox\vim\_vimrc<CR>
+  noremap <Leader>erc :split $MYVIMRC<CR>
 endif
 
 " Save here
