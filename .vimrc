@@ -523,7 +523,9 @@ endfunction
 nnoremap <leader>rwc :call ReplaceWeirdCharacters()<CR>
 
 " Teleport.vim
-noremap <silent> <Leader><C-H> :TeleportOneDigitJumpDown<CR>
-noremap <silent> <Leader><C-T> :TeleportOneDigitJumpUp<CR>
-noremap <silent> <Leader>h :TeleportTwoDigitJumpDown<CR>
-noremap <silent> <Leader>t :TeleportTwoDigitJumpUp<CR>
+nnoremap <silent> <Leader>h :<C-U>TeleportDown n<CR>
+nnoremap <silent> <Leader>t :<C-U>TeleportUp   n<CR>
+vnoremap <silent> <Leader>h :<C-U>TeleportDown v<CR>
+vnoremap <silent> <Leader>t :<C-U>TeleportUp   v<CR>
+onoremap <silent> <Leader>h :<C-U>TeleportDown o<CR>
+onoremap <silent> <Leader>t :<C-U>TeleportUp   o<CR>
