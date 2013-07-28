@@ -156,6 +156,8 @@ else
 endif
 nnoremap <silent> <Leader>n :call ToggleRelativeNumber()<CR>
 nnoremap <silent> <Leader>N :call ToggleNumber()<CR>
+vnoremap <silent> <Leader>n :<C-U>call ToggleRelativeNumber()<CR>gv
+vnoremap <silent> <Leader>N :<C-U>call ToggleNumber()<CR>gv
 set ruler
 set whichwrap=h,l
 set expandtab
