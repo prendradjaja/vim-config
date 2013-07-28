@@ -4,16 +4,17 @@ let s:LAB='star'
 let s:CYGWIN='Pandu-HP'
 
 if s:location==#s:HOME
-  set runtimepath^=~/dropbox/vim-plug
   set runtimepath^=~/dropbox/.vim
 endif
 
 " Plugins
 execute pathogen#infect()
 runtime next_motion_mapping.vim
-runtime teleport/teleport.vim
 
 let g:EasyMotion_leader_key = '<Leader>u'
+let g:Teleport_homerow = 'aoeuidhtns'
+let g:Teleport_homerow_onedigit = 'AOEUIDHTNS'
+"let g:Teleport_homerow_onedigit = '	'
 
 map <Space> <Leader>
 
@@ -531,3 +532,6 @@ vnoremap <silent> <Leader>h :<C-U>TeleportDown v<CR>
 vnoremap <silent> <Leader>t :<C-U>TeleportUp   v<CR>
 onoremap <silent> <Leader>h :<C-U>TeleportDown o<CR>
 onoremap <silent> <Leader>t :<C-U>TeleportUp   o<CR>
+
+" Kill (destroy) folds
+nnoremap <Leader>df :se fdm=manual<CR>VGzO
