@@ -6,9 +6,6 @@ let s:CYGWIN='Pandu-HP'
 if s:location==#s:HOME
   set runtimepath^=~/dropbox/vim-plug
   set runtimepath^=~/dropbox/.vim
-elseif s:location==#s:CYGWIN
-  set runtimepath^=/cygdrive/c/users/pandu/dropbox/vim-plug
-  set runtimepath^=/cygdrive/c/users/pandu/dropbox/.vim
 endif
 
 " Plugins
