@@ -4,6 +4,6 @@
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
-[submodule "bundle/vim-teleport"]
-	path = bundle/vim-teleport
-	url = https://github.com/prendradjaja/vim-teleport.git
+[submodule "bundle/vim-vertigo"]
+	path = bundle/vim-vertigo
+	url = https://github.com/prendradjaja/vim-vertigo.git

@@ -12,8 +12,7 @@ execute pathogen#infect()
 runtime next_motion_mapping.vim
 
 let g:EasyMotion_leader_key = '<Leader>u'
-let g:Teleport_homerow = 'aoeuidhtns'
-let g:Teleport_homerow_onedigit = 'AOEUIDHTN'
+let g:Vertigo_homerow = 'aoeuidhtns'
 
 map <Space> <Leader>
 
@@ -524,13 +523,13 @@ function! ReplaceWeirdCharacters()
 endfunction
 nnoremap <leader>rwc :call ReplaceWeirdCharacters()<CR>
 
-" Teleport.vim
-nnoremap <silent> <Leader>h :<C-U>TeleportDown n<CR>
-vnoremap <silent> <Leader>h :<C-U>TeleportDown v<CR>
-onoremap <silent> <Leader>h :<C-U>TeleportDown o<CR>
-nnoremap <silent> <Leader>t :<C-U>TeleportUp n<CR>
-vnoremap <silent> <Leader>t :<C-U>TeleportUp v<CR>
-onoremap <silent> <Leader>t :<C-U>TeleportUp o<CR>
+" Vertigo.vim
+nnoremap <silent> <Leader>h :<C-U>VertigoDown n<CR>
+vnoremap <silent> <Leader>h :<C-U>VertigoDown v<CR>
+onoremap <silent> <Leader>h :<C-U>VertigoDown o<CR>
+nnoremap <silent> <Leader>t :<C-U>VertigoUp n<CR>
+vnoremap <silent> <Leader>t :<C-U>VertigoUp v<CR>
+onoremap <silent> <Leader>t :<C-U>VertigoUp o<CR>
 
 " Kill (destroy) folds
 nnoremap <Leader>df :se fdm=manual<CR>VGzO
