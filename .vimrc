@@ -526,11 +526,11 @@ nnoremap <leader>rwc :call ReplaceWeirdCharacters()<CR>
 
 " Teleport.vim
 nnoremap <silent> <Leader>h :<C-U>TeleportDown n<CR>
-nnoremap <silent> <Leader>t :<C-U>TeleportUp   n<CR>
 vnoremap <silent> <Leader>h :<C-U>TeleportDown v<CR>
-vnoremap <silent> <Leader>t :<C-U>TeleportUp   v<CR>
 onoremap <silent> <Leader>h :<C-U>TeleportDown o<CR>
-onoremap <silent> <Leader>t :<C-U>TeleportUp   o<CR>
+nnoremap <silent> <Leader>t :<C-U>TeleportUp n<CR>
+vnoremap <silent> <Leader>t :<C-U>TeleportUp v<CR>
+onoremap <silent> <Leader>t :<C-U>TeleportUp o<CR>
 
 " Kill (destroy) folds
 nnoremap <Leader>df :se fdm=manual<CR>VGzO
