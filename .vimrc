@@ -13,8 +13,7 @@ runtime next_motion_mapping.vim
 
 let g:EasyMotion_leader_key = '<Leader>u'
 let g:Teleport_homerow = 'aoeuidhtns'
-let g:Teleport_homerow_onedigit = 'AOEUIDHTNS'
-"let g:Teleport_homerow_onedigit = '	'
+let g:Teleport_homerow_onedigit = 'AOEUIDHTN'
 
 map <Space> <Leader>
 
