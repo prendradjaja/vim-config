@@ -240,6 +240,7 @@ map <M-=> <C-w>+
 nnoremap <Leader>ls hs<C-m><Esc>
 nnoremap gc :echo getchar()<CR>
 nnoremap <Leader>sw :set wrap!<CR>
+nnoremap <Leader>ss :%s//
 
 " Command line things
 cnoremap <C-N> <Down>
