@@ -531,5 +531,13 @@ nnoremap <silent> <Leader>t :<C-U>VertigoUp n<CR>
 vnoremap <silent> <Leader>t :<C-U>VertigoUp v<CR>
 onoremap <silent> <Leader>t :<C-U>VertigoUp o<CR>
 
+"" Vertigo.vim -- QWERTY mappings
+"nnoremap <silent> <Leader>j :<C-U>VertigoDown n<CR>
+"vnoremap <silent> <Leader>j :<C-U>VertigoDown v<CR>
+"onoremap <silent> <Leader>j :<C-U>VertigoDown o<CR>
+"nnoremap <silent> <Leader>k :<C-U>VertigoUp n<CR>
+"vnoremap <silent> <Leader>k :<C-U>VertigoUp v<CR>
+"onoremap <silent> <Leader>k :<C-U>VertigoUp o<CR>
+
 " Kill (destroy) folds
 nnoremap <Leader>df :se fdm=manual<CR>VGzO
