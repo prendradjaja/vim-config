@@ -36,6 +36,7 @@ vnoremap <Leader>ds :s/\s\+$//<CR>
 
 " Checkboxes
 vnoremap <Leader>ac :g/./norm I[ ] <CR>
+command! CheckboxMode nnoremap <Leader>c mz0lrx`z
 
 " For note-taking and prose
 vnoremap <Leader>dr omaOmbomcOmd`br-`c`dr-k`ajr<Bar>`bj`dkr<Bar>
@@ -542,3 +543,23 @@ onoremap <silent> <Leader>t :<C-U>VertigoUp o<CR>
 
 " Kill (destroy) folds
 nnoremap <Leader>df :se fdm=manual<CR>VGzO
+
+" Append range
+nnoremap <Leader>ar :call append(line('.'), range(1, str2nr(input('Range from 1-? '))))<CR>
+
+" Date stamp
+inoremap <C-Space>cd <C-R>=strftime('%Y-%m-%d')<CR>
+
+" Python: create init function for classes where instance variables are
+" determined by __init__ arguments
+"
+" Use this after writing a line def __init__(self, blah, blah2...):
+" It will create the self.blah = blah, etc.
+function! CreatePythonInitFunction()
+  let start = line('.')+1
+  normal! Yp<<0df,xf)D
+  s/, /\r/g
+  let end = line('.')
+  execute start . ',' . end "norm y$>>.iself.\<Esc>A = \<Esc>p"
+endfunction
+nnoremap <Leader>mi :call CreatePythonInitFunction()<CR>
