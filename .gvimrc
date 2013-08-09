@@ -17,6 +17,8 @@ set lines=43 columns=90
 if  has("gui_running") && (has("win32") || has("win64"))
   nnoremap <silent> <M-Up> :call SizeUp()<CR>
   nnoremap <silent> <M-Down> :call SizeDown()<CR>
+  inoremap <silent> <M-Up> <C-O>:call SizeUp()<CR>
+  inoremap <silent> <M-Down> <C-O>:call SizeDown()<CR>
 endif
 
 function! SizeUp()
