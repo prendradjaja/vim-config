@@ -29,6 +29,7 @@ endif
 "nnoremap <C-s> :w<CR>
 "inoremap <C-s> <Esc>:w<CR>
 nnoremap <Leader>st :w<CR>
+nnoremap <Leader>sh :don't do that
 
 " Delete (trailing) spaces
 nnoremap <Leader>ds :s/\s\+$//<CR>
