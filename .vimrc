@@ -26,9 +26,9 @@ if s:location==#s:HOME
 endif
 
 " Save here
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>
-nnoremap <Leader>sh :w<CR>
+"nnoremap <C-s> :w<CR>
+"inoremap <C-s> <Esc>:w<CR>
+nnoremap <Leader>st :w<CR>
 
 " Delete (trailing) spaces
 nnoremap <Leader>ds :s/\s\+$//<CR>
