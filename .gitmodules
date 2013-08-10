@@ -7,3 +7,6 @@
 [submodule "bundle/vertigo"]
 	path = bundle/vertigo
 	url = https://github.com/prendradjaja/vim-vertigo.git
+[submodule "bundle/rsi"]
+	path = bundle/rsi
+	url = git://github.com/tpope/vim-rsi.git
