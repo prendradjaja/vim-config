@@ -1,6 +1,6 @@
 My vim config.
 
-To install, just download and run dotvim-install.sh:
+To install, clone the repo and run dotvim-install.sh to set up submodules and symlinks:
 
-    wget --no-check-certificate https://raw.github.com/prendradjaja/vim-config/master/dotvim-install.sh
-    bash dotvim-install.sh
+    git clone https://github.com/prendradjaja/vim-config.git ~/.vim
+    bash ~/.vim/dotvim-install.sh
