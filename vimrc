@@ -564,3 +564,22 @@ function! CreatePythonInitFunction()
   execute start . ',' . end "norm y$>>.iself.\<Esc>A = \<Esc>p"
 endfunction
 nnoremap <Leader>mi :call CreatePythonInitFunction()<CR>
+
+function! CygwinPipe(mode)
+  if a:mode ==# 'v'
+    normal! gv
+    let range="'<,'>"
+  elseif a:mode ==# 'n'
+    let range="%"
+  endif
+  let promptstr = "cygwin> " . range . "!"
+  let program=input(promptstr)
+  if program ==# ''
+    return | endif
+  let binpath="C:/cygwin/bin/"
+  exe range . "!" . binpath . program
+endfunction
+
+" [C]ygwin [p]ipe
+nnoremap <Leader>cp :call CygwinPipe('n')<CR>
+vnoremap <Leader>cp :<C-U>call CygwinPipe('v')<CR>
