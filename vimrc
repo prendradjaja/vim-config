@@ -565,6 +565,19 @@ function! CreatePythonInitFunction()
 endfunction
 nnoremap <Leader>mi :call CreatePythonInitFunction()<CR>
 
+function! ToCygwinPath()
+  " Turn paths like this
+  " C:\Users\Pandu\Dropbox\
+  " Into paths like this
+  " /cygdrive/c/Users/Pandu/Dropbox/
+  " Not quite complete -- doesn't work for paths containing parens and other
+  " weird things
+  s,\\,/,g
+  s,C:/,/cygdrive/c/
+  s/ /\\ /ge
+endfunction
+command! ToCygwinPath call ToCygwinPath()
+
 function! CygwinPipe(mode)
   if a:mode ==# 'v'
     normal! gv
