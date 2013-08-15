@@ -187,6 +187,7 @@ nnoremap <Leader>sl :set hlsearch!<CR>
 vnoremap <leader>bt di<><C-C>P
 set laststatus=2
 set hidden
+set fileformat=unix
 
 " Search across newlines
 " cnoremap <C-Space> \_s\+
