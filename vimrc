@@ -27,8 +27,6 @@ if s:location==#s:HOME
 endif
 
 " Save here
-"nnoremap <C-s> :w<CR>
-"inoremap <C-s> <Esc>:w<CR>
 nnoremap <Leader>st :w<CR>
 nnoremap <Leader>sh :don't do that
 
@@ -108,7 +106,7 @@ nnoremap <Leader>on o<Esc>o
   "above
 nnoremap <Leader>oD O<Esc>i
 
-" Open new lines but keep cursor position
+" [O]pen [s]pace -- open 20 lines below, keeping cursor position
 nnoremap <Leader>os ma20o<Esc>`a
 
 " Open new line, Lisp-style
@@ -361,10 +359,6 @@ function! NewEntry()
   endif
 endfunction
 
-function! ReCo() "Readable courses
-  s/\[/\r[/g
-endfunction
-
 function! ToggleNumber()
   if &number || &relativenumber
     set nonumber
@@ -418,13 +412,6 @@ function! MakeBrowseMappings()
   nnoremap <buffer> <silent> <C-m> Vgf
   nnoremap <buffer> <C-s> :call FilterAllLines()<CR>
 endfunction
-
-" Not needed because of <buffer>?
-function! ClearBrowseMappings()
-  nunmap <buffer> <C-m>
-  nunmap <buffer> <C-s>
-endfunction
-command! ClearBrowseMappings call ClearBrowseMappings()
 
 let s:browsemsg = "
 \Browsing old files\n
