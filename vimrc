@@ -61,6 +61,8 @@ nnoremap <Leader>ob o-
 nnoremap <Leader>Ob O- 
 nnoremap <Leader>OB O- 
 nnoremap <Leader>oB O- 
+" [c]hange paren to [c]omma, because i overuse parentheses
+nnoremap <Leader>cc va(<Esc>r,`<xhi,<Esc>
 
 function! CopyAndOpenPaint(name)
   let filename = a:name . ".png"
