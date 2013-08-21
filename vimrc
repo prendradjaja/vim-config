@@ -591,3 +591,5 @@ vnoremap <Leader>cp :<C-U>call CygwinPipe('v')<CR>
 
 " like gf, but opens Chrome
 nnoremap <silent> <Leader>gf :silent !start C:\Users\Pandu\AppData\Local\Google\Chrome\Application\chrome.exe <C-R><C-A><CR>
+
+nnoremap <Leader>lp :setf php<CR>
