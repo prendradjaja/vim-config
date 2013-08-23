@@ -13,7 +13,7 @@ runtime next_motion_mapping.vim
 
 let g:EasyMotion_leader_key = '<Leader>u'
 let g:Vertigo_homerow = 'aoeuidhtns'
-let g:Vertigo_onedigit_method = 'smart2'
+let g:Vertigo_onedigit_method = 'smart3'
 
 map <Space> <Leader>
 
