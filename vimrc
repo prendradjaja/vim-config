@@ -44,7 +44,7 @@ nnoremap <M-b> :call ToggleBullet()<CR>
 nnoremap <Leader>lc ma0vw2hr:`a
 nnoremap <Leader>le ma0vw2hr=`a
 nnoremap <Leader>lo ma0vw2hr `a
-inoremap <C-b> <Esc>:call ToggleBullet()<CR>:startinsert!<CR>
+inoremap <C-Space><C-b> <Esc>:call ToggleBullet()<CR>:startinsert!<CR>
 nnoremap <Leader>wa :set formatoptions+=a<CR>:set formatoptions?<CR>
 nnoremap <Leader>wo :set formatoptions-=a<CR>:set formatoptions?<CR>
 nnoremap <Leader>wy :set formatoptions-=a<CR>:SoftWrap<CR>:set formatoptions+=a<CR>ggvG$"*yu
