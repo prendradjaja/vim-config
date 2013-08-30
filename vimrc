@@ -63,6 +63,9 @@ nnoremap <Leader>OB O-
 nnoremap <Leader>oB O- 
 " [c]hange paren to [c]omma, because i overuse parentheses
 nnoremap <Leader>cc va(<Esc>r,`<xhi,<Esc>
+" indent bullets
+inoremap <C-Space><C-T> <C-O>>><End>
+inoremap <C-Space><C-D> <C-O><<<End>
 
 function! CopyAndOpenPaint(name)
   let filename = a:name . ".png"
