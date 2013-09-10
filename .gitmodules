@@ -10,3 +10,6 @@
 [submodule "bundle/rsi"]
 	path = bundle/rsi
 	url = git://github.com/tpope/vim-rsi.git
+[submodule "bundle/join"]
+	path = bundle/join
+	url = https://github.com/sk1418/Join
