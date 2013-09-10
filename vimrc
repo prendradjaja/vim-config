@@ -265,7 +265,7 @@ noremap <Leader>sP "*P
 noremap <Leader>SP "*P
 noremap <Leader>sgp "*gp
 noremap <Leader>sgP "*gP
-noremap <Leader>snp o<Esc>"*p
+noremap <Leader>sop o<Esc>"*p
 noremap <Leader>sc "*y
 noremap <Leader>sC "*Y
 
