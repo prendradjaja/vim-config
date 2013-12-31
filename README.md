@@ -1,6 +1,8 @@
-My vim config.
+My vim configuration.
 
-To install, clone the repo and run dotvim-install.sh to set up submodules and symlinks:
+To install, clone the repo, add symlinks, and run BundleInstall. Or copy and paste:
 
-    git clone https://github.com/prendradjaja/vim-config.git ~/.vim
-    bash ~/.vim/dotvim-install.sh
+    git clone https://github.com/prendradjaja/vim-config.git ~/.vim &&
+    ln -s ~/.vim/vimrc ~/.vimrc &&
+    ln -s ~/.vim/gvimrc ~/.gvimrc &&
+    vim +BundleInstall +qall
