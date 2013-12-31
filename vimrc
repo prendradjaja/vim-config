@@ -3,13 +3,19 @@ let s:HOME='PANDU-HP'
 let s:LAB='hive17.CS.Berkeley.EDU'
 let s:CYGWIN='Pandu-HP'
 
-if s:location==#s:HOME
-  set runtimepath^=~/dropbox/.vim
-endif
+set runtimepath^=~/.vim
+set runtimepath^=~/.vim/bundle/vundle
 
 " Plugins
-execute pathogen#infect()
+call vundle#rc()
+"execute pathogen#infect()
 runtime next_motion_mapping.vim
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-surround'
+Bundle 'prendradjaja/vim-vertigo'
+Bundle 'tpope/vim-rsi'
+Bundle 'sk1418/Join'
 
 let g:EasyMotion_leader_key = '<Leader>u'
 let g:Vertigo_homerow = 'aoeuidhtns'
@@ -40,10 +46,10 @@ command! CheckboxMode nnoremap <Leader>c mz0lrx`z
 
 " For note-taking and prose
 vnoremap <Leader>dr omaOmbomcOmd`br-`c`dr-k`ajr<Bar>`bj`dkr<Bar>
-nnoremap <M-b> :call ToggleBullet()<CR>
-nnoremap <Leader>lc ma0vw2hr:`a
-nnoremap <Leader>le ma0vw2hr=`a
-nnoremap <Leader>lo ma0vw2hr `a
+"nnoremap <M-b> :call ToggleBullet()<CR>
+"nnoremap <Leader>lc ma0vw2hr:`a
+"nnoremap <Leader>le ma0vw2hr=`a
+"nnoremap <Leader>lo ma0vw2hr `a
 inoremap <C-Space><C-b> <Esc>:call ToggleBullet()<CR>:startinsert!<CR>
 nnoremap <Leader>wa :set formatoptions+=a<CR>:set formatoptions?<CR>
 nnoremap <Leader>wo :set formatoptions-=a<CR>:set formatoptions?<CR>
@@ -152,6 +158,7 @@ vnoremap <Leader><> :retab!<CR>
 vnoremap <Leader>>< :retab!<CR>
 
 " General settings
+filetype plugin indent on
 syntax on
 set lbr
 if exists('&relativenumber')
@@ -596,3 +603,16 @@ vnoremap <Leader>cp :<C-U>call CygwinPipe('v')<CR>
 nnoremap <silent> <Leader>gf :silent !start C:\Users\Pandu\AppData\Local\Google\Chrome\Application\chrome.exe <C-R><C-A><CR>
 
 nnoremap <Leader>lp :setf php<CR>
+
+" [l]atex [m]atch
+nnoremap <Leader>lm Yplceend<Esc>O
+
+" [l]atex [a]nswer environment for cs70 hw
+nnoremap <Leader>la o\begin{myanswer}\end{myanswer}<Up><Up><Up>
+
+" Easier accents
+inoremap <M-'> `
+inoremap <M-c> ^
+
+" Quick Unicode (UTF-8) switch
+command! Unicode set encoding=utf-8
