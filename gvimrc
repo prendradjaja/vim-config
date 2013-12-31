@@ -120,3 +120,15 @@ function! ResizeWindow()
   endif
   winpos 683 0
 endfunction
+
+function! BigFont()
+  let &guifont='Consolas:h28'
+  set lines=15 columns=32
+  winpos 683 0
+  set nonumber
+  set norelativenumber
+  set laststatus=0
+  set noruler
+endfunction
+
+command! BigFont call BigFont()
