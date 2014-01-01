@@ -1,17 +1,19 @@
+" Appearance
 colorscheme autumn
 set guifont=Consolas:h10
+
 command! ResetFont set guifont=Consolas:h10
-" set guifont=DejaVu_Sans_Mono:h10
 set guioptions=r
-" set guioptions-=T
-" set guioptions-=m
-" set guioptions-=L
 map <silent> <C-z> :silent !start<CR>
 map <silent> <A-z> :silent !eh<CR>
 
+" GUI save and open
+nnoremap <M-w> :browse write<CR>
+nnoremap <M-e> :browse edit<CR>
+
 " Initialize window position
-winpos 683 0
 set lines=43 columns=90
+winpos 683 0
 
 " Alt-arrows for resize font
 if  has("gui_running") && (has("win32") || has("win64"))

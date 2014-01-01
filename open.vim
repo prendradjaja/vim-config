@@ -1,13 +1,17 @@
-" Open new line with no indent
-  "below
-nnoremap <Leader>od o<Esc>i
-  "2 below
-nnoremap <Leader>on o<Esc>o
-  "above
-nnoremap <Leader>oD O<Esc>i
+" A bunch of mappings for opening new lines in various ways
 
-" [O]pen [s]pace -- open 20 lines below, keeping cursor position
+" With no indent -- 2 below, 1 below, 1 above, 2 above
+nnoremap <Leader>on o<Esc>o
+nnoremap <Leader>od o<Esc>i
+nnoremap <Leader>oD O<Esc>i
+nnoremap <Leader>ou O<Esc>O
+
+" 20 lines below, keeping cursor position
 nnoremap <Leader>os ma20o<Esc>`a
 
-" Open new line, Lisp-style
+" Lisp-style
 nnoremap <Leader>ol :set lisp<CR>o <C-O>:set nolisp<CR><C-H>
+
+" In the same column
+nnoremap <Leader>oh :set ve=all<CR>mzo<Esc>`zji.<BS><C-O>:se ve=<CR>
+nnoremap <Leader>oH :set ve=all<CR>mzO<Esc>`zki.<BS><C-O>:se ve=<CR>

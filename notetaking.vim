@@ -48,3 +48,9 @@ function! ToggleBullet()
     normal 2hr-
   endif
 endfunction
+
+function! CurrChar()
+  let char = getline('.')[col('.') - 1]
+  return char
+endfunction
+

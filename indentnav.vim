@@ -48,5 +48,3 @@ function! NextIndent(exclusive, fwd, lowerlevel, skipblanks)
     endif
   endwhile
 endfunction
-
-
