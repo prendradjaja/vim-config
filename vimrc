@@ -3,13 +3,10 @@ let s:HOME='PANDU-HP'
 let s:LAB='hive17.CS.Berkeley.EDU'
 let s:CYGWIN='Pandu-HP'
 
-set runtimepath^=~/.vim
+" Plugins (Vundle)
+filetype off
 set runtimepath^=~/.vim/bundle/vundle
-
-" Plugins
 call vundle#rc()
-"execute pathogen#infect()
-runtime next_motion_mapping.vim
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
@@ -17,9 +14,19 @@ Bundle 'prendradjaja/vim-vertigo'
 Bundle 'tpope/vim-rsi'
 Bundle 'sk1418/Join'
 
-let g:EasyMotion_leader_key = '<Leader>u'
-let g:Vertigo_homerow = 'aoeuidhtns'
-let g:Vertigo_onedigit_method = 'smart4'
+" First thing in RTP should be ~/.vim
+set runtimepath^=~/.vim
+
+" Plugin settings
+runtime pluginsettings.vim
+
+" Scripts in ~/.vim
+runtime notetaking.vim
+runtime open.vim
+runtime indentnav.vim
+runtime browseold.vim
+runtime cygwin.vim
+runtime numberentry.vim
 
 map <Space> <Leader>
 
@@ -34,7 +41,6 @@ endif
 
 " Save here
 nnoremap <Leader>st :w<CR>
-nnoremap <Leader>sh :don't do that
 
 " Delete (trailing) spaces
 nnoremap <Leader>ds :s/\s\+$//<CR>
@@ -43,56 +49,6 @@ vnoremap <Leader>ds :s/\s\+$//<CR>
 " Checkboxes
 vnoremap <Leader>ac :g/./norm I[ ] <CR>
 command! CheckboxMode nnoremap <Leader>c mz0lrx`z
-
-" For note-taking and prose
-vnoremap <Leader>dr omaOmbomcOmd`br-`c`dr-k`ajr<Bar>`bj`dkr<Bar>
-"nnoremap <M-b> :call ToggleBullet()<CR>
-"nnoremap <Leader>lc ma0vw2hr:`a
-"nnoremap <Leader>le ma0vw2hr=`a
-"nnoremap <Leader>lo ma0vw2hr `a
-inoremap <C-Space><C-b> <Esc>:call ToggleBullet()<CR>:startinsert!<CR>
-nnoremap <Leader>wa :set formatoptions+=a<CR>:set formatoptions?<CR>
-nnoremap <Leader>wo :set formatoptions-=a<CR>:set formatoptions?<CR>
-nnoremap <Leader>wy :set formatoptions-=a<CR>:SoftWrap<CR>:set formatoptions+=a<CR>ggvG$"*yu
-nnoremap <Leader>mu Ypv$r-
-inoremap <C-Space>u <Esc>Ypv$r-o  - 
-nnoremap <Leader>mU gUUYpv$r=
-nnoremap <Leader>r :so abbr.vim<cr>
-vnoremap <Leader>c. <Esc>'>0v'<hhh<C-v>r.
-" [e]mphasize [b]racketed
-nnoremap <Leader>eb :set hlsearch<CR>/<\(.\<Bar>\n\)\{-}><CR>
-" newline with bullets. [o]pen [b]ullet
-inoremap <C-Space><C-M> <C-M>- 
-nnoremap <Leader>ob o- 
-nnoremap <Leader>Ob O- 
-nnoremap <Leader>OB O- 
-nnoremap <Leader>oB O- 
-" [c]hange paren to [c]omma, because i overuse parentheses
-nnoremap <Leader>cc va(<Esc>r,`<xhi,<Esc>
-" indent bullets
-inoremap <C-Space><C-T> <C-O>>><End>
-inoremap <C-Space><C-D> <C-O><<<End>
-
-function! CopyAndOpenPaint(name)
-  let filename = a:name . ".png"
-  execute "silent !copy C:\\Users\\Pandu\\Dropbox\\canvas.png " . filename
-    \ . " && start mspaint " . filename
-endfunction
-command! -nargs=1 Paint call CopyAndOpenPaint("<args>")
-nnoremap <Leader>op :Paint 
-
-command! -range=% SoftWrap
-            \ <line2>put _ |
-            \ <line1>,<line2>g/.\+/ .;-/^$/ join |normal $x
-
-function! ToggleBullet()
-  normal _
-  if CurrChar() == '-'
-    normal r 
-  else
-    normal 2hr-
-  endif
-endfunction
 
 " Java
 let java_allow_cpp_keywords=1
@@ -103,40 +59,19 @@ nnoremap <Leader>oc A {<CR>}<Esc>O<C-t>
 " 'vim' selects inside of method
 vnoremap im [mo]M
 
-" Typo preventers!
+" Typo preventer!
 command! -bang Q q<bang>
-
-" Quit with right hand
-nnoremap <Leader>wz :confirm q<CR>
-
-" Open new line with no indent
-  "below
-nnoremap <Leader>od o<Esc>i
-  "2 below
-nnoremap <Leader>on o<Esc>o
-  "above
-nnoremap <Leader>oD O<Esc>i
-
-" [O]pen [s]pace -- open 20 lines below, keeping cursor position
-nnoremap <Leader>os ma20o<Esc>`a
-
-" Open new line, Lisp-style
-nnoremap <Leader>ol :set lisp<CR>o <C-O>:set nolisp<CR><C-H>
-
-" Scroll and move cursor
-noremap <M-j> j<C-e>
-noremap <M-k> k<C-y>
 
 " Save session
 nnoremap <Leader>ws :mks! ~\vimsessions\
 
 " 80-char limit (actually 78)
-map <silent> <Leader>8 :set cc=<CR>:set tw=0<CR>:echo "no!80char"<CR>
-map <silent> <Leader>* :let &colorcolumn=join(range(79,999),",")<CR>:set textwidth=78<CR>:echo "  !80char"<CR>
+map <silent> <Leader>8 :set cc=<CR>:set tw=0<CR>:echo "no~80char"<CR>
+map <silent> <Leader>* :let &colorcolumn=join(range(79,999),",")<CR>:set textwidth=78<CR>:echo "  ~80char"<CR>
 
 " 72-char limit
-map <silent> <Leader>7 :set cc=<CR>:set tw=0<CR>:echo "no!72char"<CR>
-map <silent> <Leader>& :let &colorcolumn=join(range(73,999),",")<CR>:set textwidth=72<CR>:echo "  !72char"<CR>
+map <silent> <Leader>7 :set cc=<CR>:set tw=0<CR>:echo "no~72char"<CR>
+map <silent> <Leader>& :let &colorcolumn=join(range(73,999),",")<CR>:set textwidth=72<CR>:echo "  ~72char"<CR>
 
 " Change indentation settings
 nnoremap <silent> <Leader>i1 :set ts=1<CR>:set sw=1<CR>:echo "  sw,tw=1"<CR>
@@ -158,7 +93,7 @@ vnoremap <Leader><> :retab!<CR>
 vnoremap <Leader>>< :retab!<CR>
 
 " General settings
-filetype plugin indent on
+filetype plugin indent on " required for Vundle
 syntax on
 set lbr
 if exists('&relativenumber')
@@ -171,7 +106,6 @@ nnoremap <silent> <Leader>N :call ToggleNumber()<CR>
 vnoremap <silent> <Leader>n :<C-U>call ToggleRelativeNumber()<CR>gv
 vnoremap <silent> <Leader>N :<C-U>call ToggleNumber()<CR>gv
 set ruler
-set whichwrap=h,l
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -222,20 +156,6 @@ nnoremap <C-p> :bN<CR>
 nnoremap <C-k> <C-w>k<C-w>_
 nnoremap <C-j> <C-w>j<C-w>_
 
-" Tab control
-nnoremap <C-S-Tab> gT
-nnoremap <C-Tab> gt
-nnoremap <M-h> gT
-nnoremap <M-t> gt
-if s:location==#s:LAB
-  set showtabline=2
-  hi TabLineFill ctermfg=black
-endif
-
-" Buffer control
-nnoremap <M-H> :bprevious<CR>
-nnoremap <M-T> :bnext<CR>
-
 " Escape insert mode
 inoremap <C-c> <Esc>
 
@@ -261,9 +181,6 @@ nnoremap <M-F12> :confirm q<CR>
 cnoremap <C-N> <Down>
 cnoremap <C-P> <Up>
 
-" Easier access to unnamed register
-noremap! <C-R>' <C-R>"
-
 " System clipboard shortcuts and such nonsense
 noremap <Leader>sa ggVG
 noremap <Leader>sA "*pkdd
@@ -283,94 +200,9 @@ nnoremap <M-e> :browse edit<CR>
 " Apply macro to all lines in visual
 vnoremap <Leader>am :normal @q<CR>
 
-" Moving back and forth between lines of same or lower indentation.
-nnoremap <silent> <M-s> :call NextIndent(0, 0, 0, 1)<CR>^
-nnoremap <silent> <M-n> :call NextIndent(0, 1, 0, 1)<CR>^
-nnoremap <silent> <M-p> :call NextIndent(0, 0, 1, 1)<CR>^
-nnoremap <silent> <M-P> :call NextIndent(0, 1, 1, 1)<CR>^
-vnoremap <silent> <M-s> <Esc>:call NextIndent(0, 0, 0, 1)<CR>m'gv''
-vnoremap <silent> <M-n> <Esc>:call NextIndent(0, 1, 0, 1)<CR>m'gv''
-vnoremap <silent> <M-p> <Esc>:call NextIndent(0, 0, 1, 1)<CR>m'gv''
-vnoremap <silent> <M-P> <Esc>:call NextIndent(0, 1, 1, 1)<CR>m'gv''
-onoremap <silent> <M-s> :call NextIndent(0, 0, 0, 1)<CR>
-onoremap <silent> <M-n> :call NextIndent(0, 1, 0, 1)<CR>
-onoremap <silent> <M-p> :call NextIndent(1, 0, 1, 1)<CR>
-onoremap <silent> <M-P> :call NextIndent(1, 1, 1, 1)<CR>
-
-nmap <silent> <M-S> <M-s>zt
-nmap <silent> <M-N> <M-n>zt
-
-" Jump to the next or previous line that has the same level or a lower
-" level of indentation than the current line.
-"
-" exclusive (bool): true: Motion is exclusive
-" false: Motion is inclusive
-" fwd (bool): true: Go to next line
-" false: Go to previous line
-" lowerlevel (bool): true: Go to line with lower indentation level
-" false: Go to line with the same indentation level
-" skipblanks (bool): true: Skip blank lines
-" false: Don't skip blank lines
-function! NextIndent(exclusive, fwd, lowerlevel, skipblanks)
-  let line = line('.')
-  let column = col('.')
-  let lastline = line('$')
-  let indent = indent(line)
-  let stepvalue = a:fwd ? 1 : -1
-  while (line > 0 && line <= lastline)
-    let line = line + stepvalue
-    if ( ! a:lowerlevel && indent(line) == indent ||
-          \ a:lowerlevel && indent(line) < indent)
-      if (! a:skipblanks || strlen(getline(line)) > 0)
-        if (a:exclusive)
-          let line = line - stepvalue
-        endif
-        exe line
-        exe "normal " column . "|"
-        return
-      endif
-    endif
-  endwhile
-endfunction
-
-function! DateStamp()
-  execute "normal i### " . strftime("%Y %B %d (%A) - %I:%M %p ")
-  normal g~BB
-  call TrimLeadingZero()
-  normal 3B
-  call TrimLeadingZero()
-  normal $
-  call FillLine("#")
-endfunction
-
-function! TrimLeadingZero()
-  if CurrChar() == '0'
-    normal x
-  endif
-endfunction
-
-function! FillLine(char)
-  normal $
-  let oldtw=&textwidth
-  set textwidth=0
-  execute "normal 81a" . a:char
-  normal 81|D
-  let &textwidth=oldtw
-endfunction
-
 function! CurrChar()
   let char = getline('.')[col('.') - 1]
   return char
-endfunction
-
-function! NewEntry()
-  let hello = getline('.')
-  if hello ==# 'Hello.'
-    normal G2o
-    call DateStamp()
-    normal 2o
-    startinsert
-  endif
 endfunction
 
 function! ToggleNumber()
@@ -406,53 +238,6 @@ function! CycleNumber()
   endif
 endfunction
 
-function! BrowseOld()
-  edit ~/_customvimold
-  % delete
-  redir => message
-  silent oldfiles
-  redir END
-  silent put=message
-  global/^$/d
-  % normal dW
-  call DrawBrowseMessage()
-  write
-  call MakeBrowseMappings()
-endfunction
-command! BrowseOld call BrowseOld()
-command! BR call BrowseOld()
-
-function! MakeBrowseMappings()
-  nnoremap <buffer> <silent> <C-m> Vgf
-  nnoremap <buffer> <C-s> :call FilterAllLines()<CR>
-endfunction
-
-let s:browsemsg = "
-\Browsing old files\n
-\------------------\n
-\  Press: <C-m> to go to a file\n
-\         <C-s> to filter\n
-\\n"
-function! DrawBrowseMessage()
-  1 put! = s:browsemsg
-  +1
-endfunction
-
-function! FilterAllLines()
-  let instring = input('Filter: ')
-  if instring != ''
-    if getline(1) ==# split(s:browsemsg, '\n')[0]
-      1 normal dap
-    endif
-
-    execute 'v/' . instring . '/d'
-    write
-    redraw
-  endif
-endfunction
-
-nnoremap <silent> <C-w><C-b> :BrowseOld<CR>
-
 function! Sum(start, end)
   execute a:start . "," . (a:end-1) . "normal A+"
   execute a:start . "," . a:end . "join"
@@ -482,37 +267,6 @@ command! -range Reverse call Reverse(<line1>, <line2>)
 " hello
 nnoremap <leader>sj :set ve=all<CR>$mav_yjv'ajpkdd:set ve=<CR>
 
-" Number entry mode: aoeuidhtns = 1234567890, SPACE = hyphen
-function! NumberEntryModeOn()
-  inoremap a 1
-  inoremap o 2
-  inoremap e 3
-  inoremap u 4
-  inoremap i 5
-  inoremap d 6
-  inoremap h 7
-  inoremap t 8
-  inoremap n 9
-  inoremap s 0
-  inoremap <Space> -
-  echo "  !numberEntryMode"
-endfunction
-
-function! NumberEntryModeOff()
-  iunmap a
-  iunmap o
-  iunmap e
-  iunmap u
-  iunmap i
-  iunmap d
-  iunmap h
-  iunmap t
-  iunmap n
-  iunmap s
-  iunmap <Space>
-  echo "no!numberEntryMode"
-endfunction
-
 nnoremap <leader>en :call NumberEntryModeOn()<CR>
 nnoremap <leader>dn :call NumberEntryModeOff()<CR>
 
@@ -527,25 +281,6 @@ function! ReplaceWeirdCharacters()
   endfor
 endfunction
 nnoremap <leader>rwc :call ReplaceWeirdCharacters()<CR>
-
-" Vertigo.vim
-nnoremap <silent> <Leader>h :<C-U>VertigoDown n<CR>
-vnoremap <silent> <Leader>h :<C-U>VertigoDown v<CR>
-onoremap <silent> <Leader>h :<C-U>VertigoDown o<CR>
-nnoremap <silent> <Leader>t :<C-U>VertigoUp n<CR>
-vnoremap <silent> <Leader>t :<C-U>VertigoUp v<CR>
-onoremap <silent> <Leader>t :<C-U>VertigoUp o<CR>
-
-"" Vertigo.vim -- QWERTY mappings
-"nnoremap <silent> <Leader>j :<C-U>VertigoDown n<CR>
-"vnoremap <silent> <Leader>j :<C-U>VertigoDown v<CR>
-"onoremap <silent> <Leader>j :<C-U>VertigoDown o<CR>
-"nnoremap <silent> <Leader>k :<C-U>VertigoUp n<CR>
-"vnoremap <silent> <Leader>k :<C-U>VertigoUp v<CR>
-"onoremap <silent> <Leader>k :<C-U>VertigoUp o<CR>
-
-" Kill (destroy) folds
-nnoremap <Leader>df :se fdm=manual<CR>VGzO
 
 " Append range
 nnoremap <Leader>ar :call append(line('.'), range(1, str2nr(input('Range from 1-? '))))<CR>
@@ -567,48 +302,8 @@ function! CreatePythonInitFunction()
 endfunction
 nnoremap <Leader>mi :call CreatePythonInitFunction()<CR>
 
-function! ToCygwinPath()
-  " Turn paths like this
-  " C:\Users\Pandu\Dropbox\
-  " Into paths like this
-  " /cygdrive/c/Users/Pandu/Dropbox/
-  " Not quite complete -- doesn't work for paths containing parens and other
-  " weird things
-  s,\\,/,g
-  s,C:/,/cygdrive/c/
-  s/ /\\ /ge
-endfunction
-command! ToCygwinPath call ToCygwinPath()
-
-function! CygwinPipe(mode)
-  if a:mode ==# 'v'
-    normal! gv
-    let range="'<,'>"
-  elseif a:mode ==# 'n'
-    let range="%"
-  endif
-  let promptstr = "cygwin> " . range . "!"
-  let program=input(promptstr)
-  if program ==# ''
-    return | endif
-  let binpath="C:/cygwin/bin/"
-  exe range . "!" . binpath . program
-endfunction
-
-" [C]ygwin [p]ipe
-nnoremap <Leader>cp :call CygwinPipe('n')<CR>
-vnoremap <Leader>cp :<C-U>call CygwinPipe('v')<CR>
-
 " like gf, but opens Chrome
 nnoremap <silent> <Leader>gf :silent !start C:\Users\Pandu\AppData\Local\Google\Chrome\Application\chrome.exe <C-R><C-A><CR>
-
-nnoremap <Leader>lp :setf php<CR>
-
-" [l]atex [m]atch
-nnoremap <Leader>lm Yplceend<Esc>O
-
-" [l]atex [a]nswer environment for cs70 hw
-nnoremap <Leader>la o\begin{myanswer}\end{myanswer}<Up><Up><Up>
 
 " Easier accents
 inoremap <M-'> `
