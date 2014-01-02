@@ -19,9 +19,11 @@ let s:CYGWIN='Pandu-HP'
 " *** PLUGINS AND BITS ********************************************* {{{ *** "
 
 " Plugins {{{
+" Setup {{{
 filetype off
 set runtimepath^=~/.vim/bundle/vundle
 call vundle#rc()
+" }}}
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
@@ -29,15 +31,12 @@ Bundle 'prendradjaja/vim-vertigo'
 Bundle 'tpope/vim-rsi'
 Bundle 'sk1418/Join'
 " }}}
-
 " First thing in RTP should be ~/.vim {{{
 set runtimepath^=~/.vim
 " }}}
-
 " Plugin settings {{{
 runtime pluginsettings.vim
 " }}}
-
 " .vimrc bits {{{
 runtime notetaking.vim
 runtime open.vim
@@ -69,7 +68,8 @@ set showcmd
 set laststatus=2
 set wildmenu
 " }}}
-" Tabs {{{
+
+" Tabbing {{{
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -81,17 +81,18 @@ set backspace=start
 set nrformats=hex
 set pastetoggle=<F2>
 " }}}
-" Display {{{
-set foldmethod=marker
-set linebreak
-set list
-set display=lastline
-" }}}
 " Searching {{{
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
+" }}}
+
+" Display {{{
+set foldmethod=marker
+set linebreak
+set list
+set display=lastline
 " }}}
 " Line numbering {{{
 if exists('&relativenumber')
@@ -163,7 +164,6 @@ nnoremap <C-J> <C-W>j<C-W>_
 nnoremap <M--> <C-W>-
 nnoremap <M-=> <C-W>+
 " }}}
-
 " Quickly change some often-used settings {{{
 " Indent size
 nnoremap <silent> <Leader>i1 :set ts=1 sw=1<CR>:echo "  sw,tw=1"<CR>
@@ -192,7 +192,6 @@ vnoremap <silent> <Leader>N :<C-U>call ToggleNumber()<CR>gv
 " Quick Unicode (UTF-8) switch
 command! Unicode set encoding=utf-8
 "}}}
-
 " Ease-of-use swaps {{{
 " ` and '
 noremap ' `
@@ -236,19 +235,18 @@ nnoremap <Leader>ls hs<C-M><Esc>
     " hello     goodbye
 nnoremap <Leader>sj :set ve=all<CR>$mav_yjv'ajpkdd:set ve=<CR>
 " }}}
-
-" Checkboxes
+" Checkboxes {{{
 vnoremap <Leader>ac :g/./norm I[ ] <CR>
 command! CheckboxMode nnoremap <Leader>c mz0lrx`z
-
-" Number entry mode
+" }}}
+" Number entry mode {{{
 nnoremap <Leader>en :call NumberEntryModeOn()<CR>
 nnoremap <Leader>dn :call NumberEntryModeOff()<CR>
-
-" like gf, but opens Chrome
-nnoremap <silent> <Leader>gf :silent !start C:\Users\Pandu\AppData\Local\Google\Chrome\Application\chrome.exe <C-R><C-A><CR>
-
 " }}}
+" like gf, but opens Chrome {{{
+nnoremap <silent> <Leader>gf :silent !start C:\Users\Pandu\AppData\Local\Google\Chrome\Application\chrome.exe <C-R><C-A><CR>
+" }}}
+
 
 " *** Implement complex behavior here ****************************** {{{ *** "
 
