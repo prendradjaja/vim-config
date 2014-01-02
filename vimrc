@@ -278,6 +278,7 @@ function! EditQ()
   1new
   norm "qp
   nnoremap <buffer> <CR> 0"qD:bd!<CR>
+  inoremap <buffer> <CR> <Esc>0"qD:bd!<CR>
 endfunction
 " }}}
 
