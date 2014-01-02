@@ -118,6 +118,7 @@ inoremap <C-C> <Esc>
 nnoremap <Leader>sh :nohlsearch<CR>
 inoremap <M-w> <C-\><C-O>dB
 nnoremap gc :echo getchar()<CR>
+nnoremap <Leader>sa ggVG
 " Delete trailing spaces
 nnoremap <Leader>ds :s/\s\+$//<CR>
 vnoremap <Leader>ds :s/\s\+$//<CR>
