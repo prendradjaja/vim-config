@@ -213,15 +213,15 @@ noremap <Leader>sgP "+gP
 noremap <Leader>sop o<Esc>"+p
 noremap <Leader>soP O<Esc>"+P
 " }}}
-
 " Quick automation via Q macro {{{
 " Apply to all lines in visual
 vnoremap <Leader>am :normal @q<CR>
 " One-press mappings
 noremap <C-@> @q
 noremap <Delete> @q
+" Edit Q register
+nnoremap <Leader>em :call EditQ()<CR>
 " }}}
-
 " Split line on separator {{{
 nnoremap <Leader>sl :s//\r/g<Left><Left><Left><Left><Left>
 " ... or just on the previous character
@@ -271,6 +271,15 @@ function! ToggleRelativeNumber()
     set relativenumber?
   endif
 endfunction
+
+function! EditQ()
+  " Open up a 1-line window to edit the Q macro in. Pressing <CR> closes it
+  " and saves the macro.
+  1new
+  norm "qp
+  nnoremap <buffer> <CR> 0"qD:bd!<CR>
+endfunction
+" }}}
 
 " }}}
 
