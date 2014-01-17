@@ -14,6 +14,8 @@ function! BrowseOld()
 
   call WriteBrowseMessage()
   set nomodified
+  setlocal statusline=Browsing\ old\ files
+  setlocal cursorline
 
   nnoremap <buffer> <silent> <C-m> Vgf
   nnoremap <buffer> <C-s> :call FilterAllLines('v')<CR>
@@ -21,11 +23,9 @@ function! BrowseOld()
 endfunction
 
 let s:browsemsg = "
-\Browsing old files\n
-\------------------\n
-\  Press: <C-m> to go to a file\n
-\         <C-s> to filter\n
-\         <C-v> to filter out\n
+\  Press <C-m> to go to a file\n
+\        <C-s> to filter\n
+\        <C-v> to filter out\n
 \\n"
 function! WriteBrowseMessage()
   1 put! = s:browsemsg
