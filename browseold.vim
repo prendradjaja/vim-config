@@ -23,9 +23,9 @@ function! BrowseOld()
 endfunction
 
 let s:browsemsg = "
-\  Press <C-m> to go to a file\n
-\        <C-s> to filter\n
-\        <C-v> to filter out\n
+\Press <C-m> to go to a file\n
+\      <C-s> to filter\n
+\      <C-v> to filter out\n
 \\n"
 function! WriteBrowseMessage()
   1 put! = s:browsemsg
