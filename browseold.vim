@@ -1,5 +1,5 @@
 function! BrowseOld()
-  edit ~/_customvimold
+  enew
   % delete
   redir => message
   silent oldfiles
@@ -8,7 +8,7 @@ function! BrowseOld()
   global/^$/d
   % normal dW
   call DrawBrowseMessage()
-  write
+  set nomodified
   call MakeBrowseMappings()
 endfunction
 command! BrowseOld call BrowseOld()
