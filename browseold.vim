@@ -1,20 +1,20 @@
-function! BrowseOld()
-  enew
-  % delete
-  redir => message
-  silent oldfiles
-  redir END
-  silent put=message
-  global/^$/d
-  % normal dW
-  call WriteBrowseMessage()
-  set nomodified
-  call MakeBrowseMappings()
-endfunction
+nnoremap <silent> <C-w><C-b> :BrowseOld<CR>
 command! BrowseOld call BrowseOld()
 command! BR call BrowseOld()
 
-function! MakeBrowseMappings()
+function! BrowseOld()
+  enew
+
+  redir => fileinfo
+  silent oldfiles
+  redir END
+  silent put=fileinfo
+  global/^$/d
+  % normal dW
+
+  call WriteBrowseMessage()
+  set nomodified
+
   nnoremap <buffer> <silent> <C-m> Vgf
   nnoremap <buffer> <C-s> :call FilterAllLines('v')<CR>
   nnoremap <buffer> <C-v> :call FilterAllLines('g')<CR>
@@ -44,5 +44,3 @@ function! FilterAllLines(method)
     redraw
   endif
 endfunction
-
-nnoremap <silent> <C-w><C-b> :BrowseOld<CR>
