@@ -7,7 +7,7 @@ function! BrowseOld()
   silent put=message
   global/^$/d
   % normal dW
-  call DrawBrowseMessage()
+  call WriteBrowseMessage()
   set nomodified
   call MakeBrowseMappings()
 endfunction
@@ -16,7 +16,8 @@ command! BR call BrowseOld()
 
 function! MakeBrowseMappings()
   nnoremap <buffer> <silent> <C-m> Vgf
-  nnoremap <buffer> <C-s> :call FilterAllLines()<CR>
+  nnoremap <buffer> <C-s> :call FilterAllLines('v')<CR>
+  nnoremap <buffer> <C-v> :call FilterAllLines('g')<CR>
 endfunction
 
 let s:browsemsg = "
@@ -24,21 +25,22 @@ let s:browsemsg = "
 \------------------\n
 \  Press: <C-m> to go to a file\n
 \         <C-s> to filter\n
+\         <C-v> to filter out\n
 \\n"
-function! DrawBrowseMessage()
+function! WriteBrowseMessage()
   1 put! = s:browsemsg
   +1
 endfunction
 
-function! FilterAllLines()
+function! FilterAllLines(method)
   let instring = input('Filter: ')
   if instring != ''
     if getline(1) ==# split(s:browsemsg, '\n')[0]
       1 normal dap
     endif
 
-    execute 'v/' . instring . '/d'
-    write
+    execute a:method . '/' . instring . '/d'
+    set nomodified
     redraw
   endif
 endfunction
