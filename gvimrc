@@ -4,8 +4,8 @@ set guifont=Consolas:h10
 
 command! ResetFont set guifont=Consolas:h10
 set guioptions=r
-map <silent> <C-z> :silent !start<CR>
-map <silent> <A-z> :silent !eh<CR>
+nnoremap <silent> <C-z> :silent !start<CR>
+nnoremap <silent> <A-z> :silent !eh<CR>
 
 " GUI save and open
 nnoremap <M-w> :browse write<CR>
