@@ -117,7 +117,7 @@ endif
 
 " Miscellaneous {{{
 inoremap <C-C> <Esc>
-nnoremap <Leader>sh :nohlsearch<CR>
+nnoremap <C-L> :nohlsearch<CR><C-L>
 inoremap <M-w> <C-\><C-O>dB
 nnoremap gc :echo getchar()<CR>
 nnoremap <Leader>sa ggVG
