@@ -31,8 +31,9 @@ Bundle 'prendradjaja/vim-vertigo'
 Bundle 'tpope/vim-rsi'
 Bundle 'sk1418/Join'
 " }}}
-" First thing in RTP should be ~/.vim {{{
+" Fix runtimepath on Windows {{{
 set runtimepath^=~/.vim
+set runtimepath+=~/.vim/after
 " }}}
 " Plugin settings {{{
 runtime pluginsettings.vim
