@@ -47,6 +47,7 @@ runtime cygwin.vim
 runtime numberentry.vim
 runtime java.vim
 runtime commands.vim
+runtime functions.vim
 runtime foldtext.vim
 " }}}
 
