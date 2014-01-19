@@ -128,9 +128,9 @@ nnoremap <Leader>/ ggVGzO/
 nnoremap <Leader>ds :s/\s\+$//<CR>
 vnoremap <Leader>ds :s/\s\+$//<CR>
 " 78-char, 72-char limits
-map <silent> <Leader>8 :CharLimit 78<CR>
-map <silent> <Leader>7 :CharLimit 72<CR>
-map <silent> <Leader>0 :set cc= tw=0<CR>:echo "no~charLimit"<CR>
+nnoremap <silent> <Leader>8 :CharLimit 78<CR>
+nnoremap <silent> <Leader>7 :CharLimit 72<CR>
+nnoremap <silent> <Leader>0 :set cc= tw=0<CR>:echo "no~charLimit"<CR>
 " Emacs bindings for command line
 cnoremap <C-N> <Down>
 cnoremap <C-P> <Up>
