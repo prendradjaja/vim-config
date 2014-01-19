@@ -1,3 +1,5 @@
+" vim:fdm=marker
+"
 " Todo:
 " - Better handling for different locations/compatibility
 " - Improve bullets/notetaking (maybe a plugin?)
@@ -91,7 +93,6 @@ set hlsearch
 " }}}
 
 " Display {{{
-set foldmethod=marker
 set linebreak
 set list
 set display=lastline
