@@ -282,6 +282,7 @@ function! EditQ()
   norm "qp
   nnoremap <buffer> <CR> 0"qD:bd!<CR>
   inoremap <buffer> <CR> <Esc>0"qD:bd!<CR>
+  let &l:statusline="[Q Register] Press <CR> to save changes"
 endfunction
 " }}}
 
