@@ -60,6 +60,7 @@ runtime foldtext.vim
 " Miscellaneous {{{
 filetype plugin indent on " required by Vundle
 syntax on
+set directory=~/.vim/temp/swap//
 " }}}
 " File handling {{{
 set hidden
