@@ -3,8 +3,8 @@ command! BrowseOld call BrowseOld()
 command! BR call BrowseOld()
 
 function! BrowseOld()
+  " Fill a new buffer with the contents of :oldfiles
   enew
-
   redir => fileinfo
   silent oldfiles
   redir END
@@ -12,35 +12,40 @@ function! BrowseOld()
   global/^$/d
   % normal dW
 
-  call WriteBrowseMessage()
+  " Put help text at the top of the buffer. This is done in a slightly
+  " convoluted way (instead of just :0read) so that the cursor can be placed
+  " at the first filename without reference to the length of the text in
+  " the 'browsetext' file
+  "
+  " Three assumptions are made about this text:
+  " - It begins with the line 'Commands:'
+  " - It consists of a single paragraph, ending with at least one whitespace
+  "   line.
+  " - It should accurately describe the mappings made below.
+  read ~/.vim/browsetext
+  .,$ move 0
+  +1
+  redraw
   set nomodified
+
   setlocal statusline=Browsing\ old\ files
   setlocal cursorline
 
-  nnoremap <buffer> <silent> <C-m> Vgf
-  nnoremap <buffer> <C-s> :call FilterAllLines('v')<CR>
-  nnoremap <buffer> <C-v> :call FilterAllLines('g')<CR>
-endfunction
-
-let s:browsemsg = "
-\Press CTRL-M to go to a file\n
-\      CTRL-S to filter\n
-\      CTRL-V to filter out\n
-\\n"
-function! WriteBrowseMessage()
-  1 put! = s:browsemsg
-  +1
+  nnoremap <buffer> e Vgf
+  nnoremap <buffer> i :call FilterAllLines('v')<CR>
+  nnoremap <buffer> o :call FilterAllLines('g')<CR>
+  nnoremap <buffer> s /.*.*<Left><Left>
 endfunction
 
 function! FilterAllLines(method)
-  let instring = input('Filter: ')
-  if instring != ''
-    if getline(1) ==# split(s:browsemsg, '\n')[0]
-      1 normal dap
-    endif
-
-    execute a:method . '/' . instring . '/d'
-    set nomodified
-    redraw
+  let pattern = input('Filter: ')
+  if getline(1) ==# 'Commands:'
+    1 normal dap
   endif
+
+  execute a:method . '/' . pattern . '/d'
+  set nomodified
+  redraw
+
+  1
 endfunction
