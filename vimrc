@@ -206,6 +206,9 @@ noremap ` '
 noremap ~ !
 noremap ! ~
 noremap g! g~
+" , and :
+noremap , :
+noremap : /don't do that
 " }}}
 
 " System clipboard {{{
