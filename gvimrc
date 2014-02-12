@@ -2,8 +2,8 @@
 colorscheme autumn
 set guifont=Consolas:h10
 
-command! ResetFont set guifont=Consolas:h10
-set guioptions=r
+command! ResetFont set guifont=Ubuntu\ Mono\ 12
+set guioptions=ri
 nnoremap <silent> <C-z> :silent !start<CR>
 nnoremap <silent> <A-z> :silent !eh<CR>
 
