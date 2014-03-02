@@ -230,9 +230,10 @@ noremap <Leader>soP O<Esc>"+P
 " Quick automation via Q macro {{{
 " Apply to all lines in visual
 vnoremap <Leader>am :normal @q<CR>
+vnoremap <Delete> :normal @q<CR>
 " One-press mappings
-noremap <C-@> @q
-noremap <Delete> @q
+nnoremap <C-@> @q
+nnoremap <Delete> @q
 " Edit Q register
 nnoremap <Leader>em :call EditQ()<CR>
 " }}}
