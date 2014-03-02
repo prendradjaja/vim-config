@@ -137,6 +137,12 @@ cnoremap <C-P> <Up>
 " Easier accents
 inoremap <M-'> `
 inoremap <M-c> ^
+" Unbind keys for filetype-specific use
+nnoremap <Insert> <Nop>
+nnoremap <Home> <Nop>
+nnoremap <PageUp> <Nop>
+nnoremap <PageDown> <Nop>
+nnoremap <End> <Nop>
 " }}}
 " Space as leader {{{
 " Use default (backslash) as leader, but map spacebar to it. This way, I can
