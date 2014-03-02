@@ -208,7 +208,7 @@ noremap ! ~
 noremap g! g~
 " , and :
 noremap , :
-noremap : /don't do that
+noremap : ,
 " }}}
 
 " System clipboard {{{
