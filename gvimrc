@@ -1,19 +1,10 @@
 " Appearance
 colorscheme autumn
-set guifont=Consolas:h10
-
-command! ResetFont set guifont=Ubuntu\ Mono\ 12
 set guioptions=ri
-nnoremap <silent> <C-z> :silent !start<CR>
-nnoremap <silent> <A-z> :silent !eh<CR>
 
 " GUI save and open
 nnoremap <M-w> :browse write<CR>
 nnoremap <M-e> :browse edit<CR>
-
-" Initialize window position
-set lines=43 columns=90
-winpos 683 0
 
 " Alt-arrows for resize font
 if  has("gui_running") && (has("win32") || has("win64"))
@@ -134,3 +125,5 @@ function! BigFont()
 endfunction
 
 command! BigFont call BigFont()
+
+runtime local-gui.vim
