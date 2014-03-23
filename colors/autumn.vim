@@ -87,5 +87,6 @@ hi link vimfunction     function
 
 
 hi ColorColumn guibg=lightgrey
+hi CursorLine guibg=yellow
 
 " vim: set ts=8 sw=8 et sts=8 tw=72 fo-=t ff=unix :
