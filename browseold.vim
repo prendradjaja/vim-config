@@ -1,4 +1,5 @@
 nnoremap <silent> <C-w><C-b> :BrowseOld<CR>
+nnoremap <silent> <C-w>b :BrowseOld<CR>
 command! BrowseOld call BrowseOld()
 command! BR call BrowseOld()
 
