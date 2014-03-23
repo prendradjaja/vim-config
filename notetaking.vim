@@ -8,7 +8,7 @@ vnoremap <Leader>dr omaOmbomcOmd`br-`c`dr-k`ajr<Bar>`bj`dkr<Bar>
 inoremap <C-Space><C-b> <Esc>:call ToggleBullet()<CR>:startinsert!<CR>
 nnoremap <Leader>wa :set formatoptions+=a<CR>:set formatoptions?<CR>
 nnoremap <Leader>wo :set formatoptions-=a<CR>:set formatoptions?<CR>
-nnoremap <Leader>wy :set formatoptions-=a<CR>:SoftWrap<CR>:set formatoptions+=a<CR>ggvG$"*yu
+nnoremap <Leader>wy :set formatoptions-=a<CR>:SoftWrap<CR>:set formatoptions+=a<CR>ggvG$"+yu
 nnoremap <Leader>mu Ypv$r-
 inoremap <C-Space>u <Esc>Ypv$r-o  - 
 nnoremap <Leader>mU gUUYpv$r=
