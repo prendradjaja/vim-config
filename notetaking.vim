@@ -10,7 +10,7 @@ nnoremap <Leader>wa :set formatoptions+=a<CR>:set formatoptions?<CR>
 nnoremap <Leader>wo :set formatoptions-=a<CR>:set formatoptions?<CR>
 nnoremap <Leader>wy :set formatoptions-=a<CR>:SoftWrap<CR>:set formatoptions+=a<CR>ggvG$"+yu
 nnoremap <Leader>mu Ypv$r-
-inoremap <C-Space>u <Esc>Ypv$r-o  - 
+inoremap <C-Space><C-U> <Esc>Ypv$r-o  - 
 nnoremap <Leader>mU gUUYpv$r=
 nnoremap <Leader>r :so abbr.vim<cr>
 vnoremap <Leader>c. <Esc>'>0v'<hhh<C-v>r.

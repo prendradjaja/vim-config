@@ -232,7 +232,6 @@ noremap <Leader>soP O<Esc>"+P
 vnoremap <Leader>am :normal @q<CR>
 vnoremap <Delete> :normal @q<CR>
 " One-press mappings
-nnoremap <C-@> @q
 nnoremap <Delete> @q
 " Edit Q register
 nnoremap <Leader>em :call EditQ()<CR>
