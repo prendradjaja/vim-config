@@ -33,9 +33,17 @@ function! BrowseOld()
   setlocal cursorline
 
   nnoremap <buffer> e Vgf
+  nnoremap <buffer> <C-M> Vgf
+
   nnoremap <buffer> i :call FilterAllLines('v')<CR>
+
   nnoremap <buffer> o :call FilterAllLines('g')<CR>
+
   nnoremap <buffer> s /.*.*<Left><Left>
+  nnoremap <buffer> / /.*.*<Left><Left>
+
+  nnoremap <buffer> S ?.*.*<Left><Left>
+  nnoremap <buffer> ? ?.*.*<Left><Left>
 endfunction
 
 function! FilterAllLines(method)
