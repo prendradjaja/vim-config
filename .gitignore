@@ -4,3 +4,5 @@ bundle/*
 !bundle/vundle
 temp/swap/*
 !temp/swap/nothing
+local.vim
+local-gui.vim
