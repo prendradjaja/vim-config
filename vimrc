@@ -302,29 +302,3 @@ endfunction
 runtime local.vim
 
 " *** Sandbox area below this line ***************************************** "
-"se fdm=syntax
-command! OverrideSimpleMake call OverrideSimpleMake()
-function! OverrideSimpleMake()
-  nnoremap <Home> :w<CR>:!make<CR>
-endfunction
-set mouse=a
-nnoremap  <Nop>
-inoremap <C-@> <Nop>
-
-function! Autumn()
-  set t_Co=256
-  color autumn
-endfunction
-command! Autumn call Autumn()
-
-function! Default()
-  set t_Co=8
-  color default
-endfunction
-command! Default call Default()
-
-call submode#enter_with('ge', 'n', '', 'ge', 'ge')
-call submode#map('ge', 'n', '', 'e', 'ge')
-
-" Open curly-brace block -- open a new {} block and enter insert mode
-nnoremap <Leader>oc A {<CR>}<Esc>O
