@@ -27,7 +27,6 @@ set runtimepath^=~/.vim/bundle/vundle
 call vundle#rc()
 " }}}
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-surround'
 Bundle 'prendradjaja/vim-vertigo'
 Bundle 'tpope/vim-rsi'

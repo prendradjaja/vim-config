@@ -7,6 +7,3 @@ vnoremap <silent> <Leader>t :<C-U>VertigoUp v<CR>
 onoremap <silent> <Leader>t :<C-U>VertigoUp o<CR>
 let g:Vertigo_homerow = 'aoeuidhtns'
 let g:Vertigo_onedigit_method = 'smart4'
-
-" EasyMotion
-let g:EasyMotion_leader_key = '<Leader>u'
