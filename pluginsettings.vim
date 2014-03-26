@@ -11,7 +11,7 @@ let g:Vertigo_onedigit_method = 'smart4'
 
 " CtrlP
 let g:ctrlp_prompt_mappings = {
-  \ 'PrtBS()':              ['<bs>', '<c-]>'],
+  \ 'PrtBS()':              ['<bs>', '<c-]>', '<c-h>'],
   \ 'PrtDelete()':          ['<del>'],
   \ 'PrtDeleteWord()':      ['<c-w>'],
   \ 'PrtClear()':           ['<c-u>'],
@@ -37,7 +37,7 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtInsert()':          ['<c-\>'],
   \ 'PrtCurStart()':        ['<c-a>'],
   \ 'PrtCurEnd()':          ['<c-e>'],
-  \ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
+  \ 'PrtCurLeft()':         ['<left>', '<c-^>'],
   \ 'PrtCurRight()':        ['<c-l>', '<right>'],
   \ 'PrtClearCache()':      ['<F5>'],
   \ 'PrtDeleteEnt()':       ['<F7>'],
