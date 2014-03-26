@@ -1,7 +1,7 @@
 " Vim colour file
 " Maintainer:   Antony Scriven <ad_scriven@postmaster.co.uk>
 " Last Change:  2003-06-12
-" Modified by:  Pandu Rendradjaja 2013-07-25
+" Modified by:  Pandu Rendradjaja. My modifications do not attempt to support 8-color terminals.
 "
 set background=light
 hi clear
