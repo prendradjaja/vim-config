@@ -29,7 +29,7 @@ hi ModeMsg      term=bold      cterm=none ctermfg=green         ctermbg=darkgree
 hi MoreMsg      term=bold      cterm=none ctermfg=darkGreen     ctermbg=white           gui=none guifg=darkgreen        guibg=bg
 hi Question     term=bold      cterm=none ctermfg=darkGreen     ctermbg=white           gui=none guifg=darkgreen        guibg=bg
 hi Search       term=reverse   cterm=none ctermfg=black         ctermbg=yellow          gui=none guifg=black            guibg=yellow
-hi SpecialKey   term=italic    cterm=none ctermfg=lightgrey     ctermbg=white           gui=none guifg=lightblue        guibg=bg
+hi SpecialKey   term=italic    cterm=none ctermfg=grey          ctermbg=white           gui=none guifg=lightblue        guibg=bg
 hi NonText      term=bold      cterm=none ctermfg=darkgrey      ctermbg=white           gui=none guifg=#c6c6c6          guibg=bg
 hi StatusLine   term=reverse   cterm=none ctermfg=white         ctermbg=black           gui=none guifg=#80624d          guibg=#ddd9b8
 hi Title        term=bold      cterm=none ctermfg=DarkMagenta   ctermbg=white           gui=none guifg=DarkMagenta      guibg=bg
