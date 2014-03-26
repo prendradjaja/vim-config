@@ -33,6 +33,7 @@ Bundle 'tpope/vim-rsi'
 Bundle 'sk1418/Join'
 Bundle 'kana/vim-submode'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tomtom/tcomment_vim'
 " }}}
 " Fix runtimepath on Windows {{{
 set runtimepath^=~/.vim
