@@ -32,6 +32,7 @@ Bundle 'prendradjaja/vim-vertigo'
 Bundle 'tpope/vim-rsi'
 Bundle 'sk1418/Join'
 Bundle 'kana/vim-submode'
+Bundle 'kien/ctrlp.vim'
 " }}}
 " Fix runtimepath on Windows {{{
 set runtimepath^=~/.vim
