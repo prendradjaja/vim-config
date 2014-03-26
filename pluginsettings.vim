@@ -9,6 +9,11 @@ onoremap <silent> <Leader>t :<C-U>VertigoUp o<CR>
 let g:Vertigo_homerow = 'aoeuidhtns'
 let g:Vertigo_onedigit_method = 'smart4'
 
+" TComment
+call tcomment#DefineType('twoslashes', '// %s' )
+nnoremap <C-_>/ :TCommentAs twoslashes<CR>
+vnoremap <C-_>/ :TCommentAs twoslashes<CR>
+
 " CtrlP
 let g:ctrlp_prompt_mappings = {
   \ 'PrtBS()':              ['<bs>', '<c-]>', '<c-h>'],
