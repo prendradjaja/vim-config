@@ -37,7 +37,7 @@ if has("gui_running") || &t_Co > 8
         hi Visual       term=reverse   cterm=none ctermfg=black         ctermbg=lightgrey       gui=none guifg=black       guibg=lightgreen
         hi VertSplit    term=reverse   cterm=none ctermfg=darkgrey      ctermbg=darkgrey        gui=none guifg=#c7c7c2     guibg=#d7d7d2 
         hi StatusLineNC term=reverse   cterm=none ctermfg=white         ctermbg=darkgrey        gui=none guifg=darkgrey    guibg=#d7d7d2
-        hi Comment      term=italic    cterm=none ctermfg=darkblue      ctermbg=white           gui=none guifg=#b72121     guibg=lightgrey
+        hi Comment      term=italic    cterm=none ctermfg=darkred       ctermbg=lightgrey       gui=none guifg=#b72121     guibg=lightgrey
 else
         hi Visual       term=reverse   cterm=none ctermfg=green         ctermbg=darkgreen       gui=none guifg=black    guibg=lightgreen
         hi VertSplit    term=reverse   cterm=none ctermfg=darkcyan      ctermbg=darkblue        gui=none guifg=darkgrey guibg=darkgrey 
