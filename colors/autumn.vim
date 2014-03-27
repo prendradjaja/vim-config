@@ -23,7 +23,7 @@ hi  Folded        term=reverse    cterm=none       ctermfg=darkblue     ctermbg=
 hi  FoldColumn    term=reverse    cterm=none       ctermfg=darkblue     ctermbg=grey         gui=none       guifg=darkblue     guibg=grey
 hi  IncSearch     term=reverse    cterm=none       ctermfg=yellow       ctermbg=darkgreen    gui=none       guifg=yellow       guibg=#449944
 hi  lCursor       term=reverse    cterm=none       ctermfg=black        ctermbg=cyan         gui=none       guifg=black        guibg=Cyan
-hi  LineNr        term=reverse    cterm=none       ctermfg=darkred      ctermbg=lightgrey    gui=none       guifg=brown        guibg=lightgrey
+hi  LineNr        term=reverse    cterm=none       ctermfg=darkred      ctermbg=251          gui=none       guifg=brown        guibg=lightgrey
 hi  ModeMsg       term=bold       cterm=none       ctermfg=28           ctermbg=151          gui=none       guifg=#007700      guibg=#aaccaa
 hi  MoreMsg       term=bold       cterm=none       ctermfg=darkGreen    ctermbg=white        gui=none       guifg=darkgreen    guibg=bg
 hi  Question      term=bold       cterm=none       ctermfg=darkGreen    ctermbg=white        gui=none       guifg=darkgreen    guibg=bg
@@ -35,7 +35,7 @@ hi  Title         term=bold       cterm=none       ctermfg=DarkMagenta  ctermbg=
 hi  Visual        term=reverse    cterm=none       ctermfg=black        ctermbg=120          gui=none       guifg=black        guibg=lightgreen
 hi  VertSplit     term=reverse    cterm=none       ctermfg=darkgrey     ctermbg=darkgrey     gui=none       guifg=#c7c7c2      guibg=#d7d7d2
 hi  StatusLineNC  term=reverse    cterm=none       ctermfg=white        ctermbg=darkgrey     gui=none       guifg=darkgrey     guibg=#d7d7d2
-hi  Comment       term=italic     cterm=none       ctermfg=darkred      ctermbg=lightgrey    gui=none       guifg=#b72121      guibg=lightgrey
+hi  Comment       term=italic     cterm=none       ctermfg=darkred      ctermbg=253          gui=none       guifg=#b72121      guibg=lightgrey
 hi  VisualNOS     term=bold       cterm=none       ctermfg=grey         ctermbg=black        gui=none       guifg=grey         guibg=black
 hi  WarningMsg    term=standout   cterm=none       ctermfg=Red          ctermbg=white        gui=none       guifg=Red          guibg=bg
 hi  WildMenu      term=bold       cterm=none       ctermfg=darkblue     ctermbg=yellow       gui=none       guifg=black        guibg=lightyellow
