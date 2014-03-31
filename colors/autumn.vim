@@ -34,7 +34,7 @@ hi  StatusLine    term=reverse    cterm=none       ctermfg=94           ctermbg=
 hi  Title         term=bold       cterm=none       ctermfg=DarkMagenta  ctermbg=white        gui=none       guifg=DarkMagenta  guibg=bg
 hi  Visual        term=reverse    cterm=none       ctermfg=black        ctermbg=120          gui=none       guifg=black        guibg=lightgreen
 hi  VertSplit     term=reverse    cterm=none       ctermfg=darkgrey     ctermbg=darkgrey     gui=none       guifg=#c7c7c2      guibg=#d7d7d2
-hi  StatusLineNC  term=reverse    cterm=none       ctermfg=white        ctermbg=darkgrey     gui=none       guifg=darkgrey     guibg=#d7d7d2
+hi  StatusLineNC  term=reverse    cterm=none       ctermfg=darkgrey     ctermbg=lightgrey    gui=none       guifg=darkgrey     guibg=#d7d7d2
 hi  Comment       term=italic     cterm=none       ctermfg=darkred      ctermbg=253          gui=none       guifg=#b72121      guibg=lightgrey
 hi  VisualNOS     term=bold       cterm=none       ctermfg=grey         ctermbg=black        gui=none       guifg=grey         guibg=black
 hi  WarningMsg    term=standout   cterm=none       ctermfg=Red          ctermbg=white        gui=none       guifg=Red          guibg=bg
