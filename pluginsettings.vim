@@ -13,6 +13,8 @@ let g:Vertigo_onedigit_method = 'smart4'
 call tcomment#DefineType('twoslashes', '// %s' )
 nnoremap <C-_>/ :TCommentAs twoslashes<CR>
 vnoremap <C-_>/ :TCommentAs twoslashes<CR>
+nnoremap <Leader>_/ :TCommentAs twoslashes<CR>
+vnoremap <Leader>_/ :TCommentAs twoslashes<CR>
 
 " CtrlP
 let g:ctrlp_prompt_mappings = {
