@@ -170,8 +170,8 @@ nnoremap <Leader>ws :mks! ~\vimsessions\
 " Typo preventer!
 command! -bang Q q<bang>
 " Buffer control
-nnoremap <C-N> :bn<CR>
-nnoremap <C-P> :bN<CR>
+nnoremap <C-N> <C-^>
+nnoremap <C-H> :bn<CR>
 " Window control
 nnoremap <C-K> <C-W>k<C-W>_
 nnoremap <C-J> <C-W>j<C-W>_
