@@ -17,6 +17,10 @@ nnoremap <Leader>_/ :TCommentAs twoslashes<CR>
 vnoremap <Leader>_/ :TCommentAs twoslashes<CR>
 
 " CtrlP
+let g:ctrlp_map = '<c-w><c-p>'
+nnoremap <C-P> :CtrlPBuffer<CR>
+nnoremap <C-W><C-M> :CtrlPMRU<CR>
+nnoremap <C-W>m :CtrlPMRU<CR>
 let g:ctrlp_prompt_mappings = {
   \ 'PrtBS()':              ['<bs>', '<c-]>', '<c-h>'],
   \ 'PrtDelete()':          ['<del>'],
