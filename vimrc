@@ -158,8 +158,8 @@ map <Space> <Leader>
 nnoremap <Leader>rc :source $MYVIMRC<CR>
 nnoremap <Leader>gc :source $MYGVIMRC<CR>
 " Open vimrc in new split
-noremap <Leader>erc :split $MYVIMRC<CR>
-noremap <Leader>egc :split $MYGVIMRC<CR>
+noremap <Leader>erc :edit $MYVIMRC<CR>
+noremap <Leader>egc :edit $MYGVIMRC<CR>
 " }}}
 
 " Core file-handling {{{
