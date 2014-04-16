@@ -13,11 +13,6 @@
 " - Each group of such mappings should also be marked with the date they were
 "   removed
 
-let s:location=hostname()
-let s:HOME='PANDU-HP'
-let s:LAB='hive17.CS.Berkeley.EDU'
-let s:CYGWIN='Pandu-HP'
-
 " *** PLUGINS AND BITS ********************************************* {{{ *** "
 
 " Plugins {{{
