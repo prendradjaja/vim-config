@@ -103,11 +103,7 @@ else
 endif
 " }}}
 " Listchars {{{
-if s:location==#s:LAB
-  set listchars=tab:\|\ ,trail:>
-else
-  set listchars=tab:¦\ ,trail:>
-endif
+set listchars=tab:¦\ ,trail:>
 " }}}
 
 " }}}
