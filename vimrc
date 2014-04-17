@@ -163,7 +163,8 @@ noremap <Leader>egc :edit $MYGVIMRC<CR>
 
 " Core file-handling {{{
 " Save this file
-nnoremap <Leader>st :w<CR>
+nnoremap <C-S> :w<CR>
+nnoremap S :w<CR>
 " Save session
 nnoremap <Leader>ws :mks! ~\vimsessions\
 " Typo preventer!
