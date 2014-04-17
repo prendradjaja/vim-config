@@ -24,6 +24,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rsi'
+Bundle 'tpope/vim-repeat'
 Bundle 'prendradjaja/vim-vertigo'
 Bundle 'sk1418/Join'
 Bundle 'kana/vim-submode'
