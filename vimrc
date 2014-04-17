@@ -163,10 +163,8 @@ command! -bang Q q<bang>
 nnoremap <C-N> <C-^>
 nnoremap <C-H> :bn<CR>
 " Window control
-nnoremap <C-K> <C-W>k<C-W>_
-nnoremap <C-J> <C-W>j<C-W>_
-nnoremap <M--> <C-W>-
-nnoremap <M-=> <C-W>+
+nnoremap <C-K> <C-W>k
+nnoremap <C-J> <C-W>j
 " }}}
 " Quickly change some often-used settings {{{
 " Indent size
