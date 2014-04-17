@@ -142,6 +142,8 @@ nnoremap <C-W><C-C> <Nop>
 nnoremap r<C-C> <Nop>
 inoremap <C-@> <Space>
 inoremap <LeftMouse> <Nop>
+" Open curly-brace block -- open a new {} block and enter insert mode
+nnoremap <Leader>oc A {<CR>}<Esc>O
 " }}}
 " Space as leader {{{
 " Use default (backslash) as leader, but map spacebar to it. This way, I can
