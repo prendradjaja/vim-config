@@ -5,10 +5,10 @@ function! Autumn()
 endfunction
 command! Autumn call Autumn()
 
-function! Default()
+function! DefaultColors()
   set t_Co=8
   color default
 endfunction
-command! Default call Default()
+command! DefaultColors call DefaultColors()
 
 Autumn
