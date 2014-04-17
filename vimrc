@@ -137,6 +137,11 @@ nnoremap <Home> <Nop>
 nnoremap <PageUp> <Nop>
 nnoremap <PageDown> <Nop>
 nnoremap <End> <Nop>
+" Fix annoying Vim behavior
+nnoremap <C-W><C-C> <Nop>
+nnoremap r<C-C> <Nop>
+inoremap <C-@> <Space>
+inoremap <LeftMouse> <Nop>
 " }}}
 " Space as leader {{{
 " Use default (backslash) as leader, but map spacebar to it. This way, I can
