@@ -60,3 +60,36 @@ let g:ctrlp_prompt_mappings = {
   \ 'OpenMulti()':          ['<c-o>'],
   \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
   \ }
+
+" Submode
+let g:submode_timeoutlen = 3000
+
+call submode#enter_with('ge', 'n', '', 'ge', 'ge')
+call submode#enter_with('ge', 'n', '', 'gE', 'gE')
+call submode#map('ge', 'n', '', 'e', 'ge')
+call submode#map('ge', 'n', '', 'l', 'e')
+call submode#map('ge', 'n', '', 'E', 'gE')
+call submode#map('ge', 'n', '', 'L', 'E')
+
+call submode#enter_with('wrap-scroll', 'n', '', 'zl', 'zl')
+call submode#enter_with('wrap-scroll', 'n', '', 'zh', 'zh')
+call submode#enter_with('wrap-scroll', 'n', '', 'z<c-l>', '5zl')
+call submode#enter_with('wrap-scroll', 'n', '', 'z<c-h>', '5zh')
+call submode#enter_with('wrap-scroll', 'n', '', 'zL', 'zL')
+call submode#enter_with('wrap-scroll', 'n', '', 'zH', 'zH')
+call submode#map('wrap-scroll', 'n', '', 'l', 'zl')
+call submode#map('wrap-scroll', 'n', '', 'h', 'zh')
+call submode#map('wrap-scroll', 'n', '', '<c-l>', '5zl')
+call submode#map('wrap-scroll', 'n', '', '<c-h>', '5zh')
+call submode#map('wrap-scroll', 'n', '', 'L', 'zL')
+call submode#map('wrap-scroll', 'n', '', 'H', 'zH')
+
+call submode#enter_with('section-nav', 'n', '', ']]', ']]zt')
+call submode#enter_with('section-nav', 'n', '', '[[', '[[zt')
+call submode#map('section-nav', 'n', '', ']', ']]zt')
+call submode#map('section-nav', 'n', '', '[', '[[zt')
+
+call submode#enter_with('resize-window', 'n', '', '<c-w>-', '<c-w>-')
+call submode#enter_with('resize-window', 'n', '', '<c-w>+', '<c-w>+')
+call submode#map('resize-window', 'n', '', '-', '<c-w>-')
+call submode#map('resize-window', 'n', '', '+', '<c-w>+')
