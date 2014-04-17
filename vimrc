@@ -41,7 +41,6 @@ runtime pluginsettings.vim
 runtime notetaking.vim
 runtime open.vim
 runtime indentnav.vim
-runtime browseold.vim
 runtime cygwin.vim
 runtime numberentry.vim
 runtime java.vim
