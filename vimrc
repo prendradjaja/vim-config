@@ -113,7 +113,6 @@ set listchars=tab:¦\ ,trail:>
 inoremap <C-C> <Esc>
 nnoremap <C-L> :nohlsearch<CR><C-L>
 inoremap <M-w> <C-\><C-O>dB
-nnoremap gc :echo getchar()<CR>
 nnoremap <Leader>sa ggVG
 nnoremap <Leader>/ ggVGzO/
 " Delete trailing spaces
