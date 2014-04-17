@@ -59,6 +59,7 @@ runtime colors.vim
 filetype plugin indent on " required by Vundle
 syntax on
 set directory=~/.vim/temp/swap//
+set mouse=a
 " }}}
 " File handling {{{
 set hidden
