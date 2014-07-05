@@ -49,6 +49,7 @@ runtime commands.vim
 runtime functions.vim
 runtime foldtext.vim
 runtime colors.vim
+runtime submodemappings.vim
 " }}}
 
 " }}}
