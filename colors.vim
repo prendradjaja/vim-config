@@ -11,4 +11,7 @@ function! DefaultColors()
 endfunction
 command! DefaultColors call DefaultColors()
 
-Autumn
+if !has('gui_running')
+    Autumn
+    " DefaultColors
+endif
