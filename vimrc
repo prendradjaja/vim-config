@@ -90,7 +90,9 @@ set pastetoggle=<F2>
 set incsearch
 set ignorecase
 set smartcase
-set hlsearch
+if !exists('g:vimrc_loaded')
+  set hlsearch
+endif
 " }}}
 
 " Display {{{
