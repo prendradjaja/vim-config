@@ -303,4 +303,6 @@ endfunction
 
 runtime local.vim
 
+let g:vimrc_loaded = 1
+
 " *** Sandbox area below this line ***************************************** "
