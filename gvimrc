@@ -1,5 +1,5 @@
 " Appearance
-colorscheme autumn
+colorscheme 8-bit-autumn
 set guioptions=i
 
 " GUI save and open
