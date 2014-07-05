@@ -38,7 +38,7 @@ nnoremap <Leader>op :Paint
 
 command! -range=% SoftWrap
             \ <line2>put _ |
-            \ <line1>,<line2>g/.\+/ .;-/^$/ join |normal $x
+            \ <line1>,<line2>g/.\+/ .;-/^$/-1 join
 
 function! ToggleBullet()
   normal _
