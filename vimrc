@@ -253,7 +253,7 @@ nnoremap <Leader>ls hs<C-M><Esc>
 nnoremap <Leader>sj :set ve=all<CR>$mav_yjv'ajpkdd:set ve=<CR>
 " }}}
 " Checkboxes {{{
-vnoremap <Leader>ac :g/./norm I[ ] <CR>
+vnoremap <Leader>ac :g/./norm I[ ] <CR>:nohl<CR>
 command! CheckboxMode nnoremap <Leader>c mz0lrx`z
 " }}}
 " Number entry mode {{{
