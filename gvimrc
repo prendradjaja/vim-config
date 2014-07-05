@@ -1,6 +1,6 @@
 " Appearance
 colorscheme autumn
-set guioptions=ri
+set guioptions=i
 
 " GUI save and open
 nnoremap <M-w> :browse write<CR>
