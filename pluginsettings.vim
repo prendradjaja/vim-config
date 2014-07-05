@@ -63,3 +63,17 @@ let g:ctrlp_prompt_mappings = {
 
 
 
+" Surround
+let g:surround_no_mappings=1
+nmap dr  <Plug>Dsurround
+nmap cr  <Plug>Csurround
+nmap yr  <Plug>Ysurround
+nmap yR  <Plug>YSurround
+nmap yrr <Plug>Yssurround
+nmap yRr <Plug>YSsurround
+nmap yRR <Plug>YSsurround
+xmap R   <Plug>VSurround
+xmap gR  <Plug>VgSurround
+imap <C-S>  <Plug>Isurround
+imap <C-G>s <Plug>Isurround
+imap <C-G>S <Plug>ISurround
