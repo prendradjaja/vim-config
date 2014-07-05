@@ -61,6 +61,8 @@ filetype plugin indent on " required by Vundle
 syntax on
 set directory=~/.vim/temp/swap//
 set mouse=a
+set lazyredraw
+set foldmethod=marker
 " }}}
 " File handling {{{
 set hidden
@@ -121,6 +123,8 @@ nnoremap <C-L> :nohlsearch<CR><C-L>
 inoremap <M-w> <C-\><C-O>dB
 nnoremap <Leader>sa ggVG
 nnoremap <Leader>/ ggVGzO/
+nnoremap ze zt8<C-Y>
+nnoremap zy zb8<C-E>
 " Delete trailing spaces
 nnoremap <Leader>ds :s/\s\+$//<CR>
 vnoremap <Leader>ds :s/\s\+$//<CR>
@@ -145,6 +149,14 @@ nnoremap <C-W><C-C> <Nop>
 nnoremap r<C-C> <Nop>
 inoremap <C-@> <Space>
 inoremap <LeftMouse> <Nop>
+  " create new files with gf
+nnoremap gf :e <cfile><CR>
+nmap gh gf
+  " don't zz0 on bufswitch
+if v:version >= 700
+  au BufLeave * let b:winview = winsaveview()
+  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+endif
 " Open curly-brace block -- open a new {} block and enter insert mode
 nnoremap <Leader>oc A {<CR>}<Esc>O
 " }}}
@@ -206,7 +218,7 @@ vnoremap <silent> <Leader>N :<C-U>call ToggleNumber()<CR>gv
 " Quick Unicode (UTF-8) switch
 command! Unicode set encoding=utf-8
 "}}}
-" Ease-of-use swaps {{{
+" Ease-of-use maps and sawps {{{
 " ` and '
 noremap ' `
 noremap ` '
@@ -217,6 +229,13 @@ noremap g! g~
 " , and :
 noremap , :
 noremap : ,
+" s for /
+noremap s /
+noremap S ?
+noremap / :use s
+noremap ? :use S
+" easier paste in insert mode
+inoremap <C-R>' <C-R>"
 " }}}
 
 " System clipboard {{{
