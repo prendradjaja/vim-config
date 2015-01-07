@@ -19,7 +19,7 @@ hi  DiffDelete    gui=none       guifg=#729fcf  guibg=#008080
 hi  difftext      gui=bold       guifg=#eeeeee  guibg=#ff0000
 hi  Directory     gui=none       guifg=#ff0000  guibg=#eeeeee
 hi  ErrorMsg      gui=none       guifg=#eeeeee  guibg=#cc0000
-hi  Folded        gui=none       guifg=#000080  guibg=#c0c0c0
+hi  Folded        gui=none       guifg=#000080  guibg=#eeeeee
 hi  FoldColumn    gui=none       guifg=#000080  guibg=#a8a8a8
 hi  IncSearch     gui=none       guifg=#ffff00  guibg=#008000
 hi  lCursor       gui=none       guifg=#000000  guibg=#00ffff

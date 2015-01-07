@@ -19,7 +19,7 @@ hi  DiffDelete    term=bold       cterm=none       ctermfg=blue         ctermbg=
 hi  difftext      term=reverse    cterm=bold       ctermfg=white        ctermbg=red          gui=none       guifg=lightyellow  guibg=#cc7733
 hi  Directory     term=none       cterm=none       ctermfg=Red          ctermbg=white        gui=none       guifg=Red          guibg=bg
 hi  ErrorMsg      term=standout   cterm=none       ctermfg=white        ctermbg=DarkRed      gui=none       guifg=white        guibg=DarkRed
-hi  Folded        term=reverse    cterm=none       ctermfg=darkblue     ctermbg=lightgrey    gui=none       guifg=darkblue     guibg=lightgrey
+hi  Folded        term=reverse    cterm=none       ctermfg=darkblue     ctermbg=White        gui=none       guifg=darkblue     guibg=lightgrey
 hi  FoldColumn    term=reverse    cterm=none       ctermfg=darkblue     ctermbg=grey         gui=none       guifg=darkblue     guibg=grey
 hi  IncSearch     term=reverse    cterm=none       ctermfg=yellow       ctermbg=darkgreen    gui=none       guifg=yellow       guibg=#449944
 hi  lCursor       term=reverse    cterm=none       ctermfg=black        ctermbg=cyan         gui=none       guifg=black        guibg=Cyan
