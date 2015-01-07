@@ -56,6 +56,7 @@ runtime submodemappings.vim
 runtime editbinary.vim
 runtime oldenglish.vim
 runtime german.vim
+runtime s-exp.vim
 " }}}
 
 " }}}
