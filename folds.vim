@@ -1,3 +1,6 @@
+" Open all folds before searching
+nnoremap zs zR:redraw<CR>/
+
 " Set a nicer foldtext function
 set foldtext=MyFoldText()
 function! MyFoldText()

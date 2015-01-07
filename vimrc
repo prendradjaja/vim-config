@@ -30,6 +30,9 @@ Bundle 'sk1418/Join'
 Bundle 'kana/vim-submode'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'jason0x43/vim-js-indent'
 " }}}
 " Fix runtimepath on Windows {{{
 set runtimepath^=~/.vim
@@ -47,9 +50,12 @@ runtime numberentry.vim
 runtime java.vim
 runtime commands.vim
 runtime functions.vim
-runtime foldtext.vim
+runtime folds.vim
 runtime colors.vim
 runtime submodemappings.vim
+runtime editbinary.vim
+runtime oldenglish.vim
+runtime german.vim
 " }}}
 
 " }}}
@@ -62,12 +68,12 @@ syntax on
 set directory=~/.vim/temp/swap//
 set mouse=a
 set lazyredraw
-set foldmethod=marker
 " }}}
 " File handling {{{
 set hidden
 set autochdir
 set fileformat=unix
+set wildmode=list:longest,full
 " }}}
 " Info {{{
 set ruler
@@ -101,6 +107,7 @@ endif
 set linebreak
 set list
 set display=lastline
+set nowrap
 " }}}
 " Line numbering {{{
 if exists('&relativenumber')
@@ -186,6 +193,7 @@ command! -bang Q q<bang>
 " Buffer control
 nnoremap <C-N> <C-^>
 nnoremap <C-H> :bn<CR>
+nnoremap <C-G> :bp<CR>
 " Window control
 nnoremap <C-K> <C-W>k
 nnoremap <C-J> <C-W>j
@@ -232,10 +240,13 @@ noremap : ,
 " s for /
 noremap s /
 noremap S ?
-noremap / :use s
-noremap ? :use S
+noremap / <nop>
+noremap ? <nop>
+" _ for ^
+noremap _ ^
+noremap ^ <nop>
 " easier paste in insert mode
-inoremap <C-R>' <C-R>"
+noremap! <C-R>' <C-R>"
 " }}}
 
 " System clipboard {{{
@@ -281,6 +292,13 @@ nnoremap <Leader>dn :call NumberEntryModeOff()<CR>
 " }}}
 " like gf, but opens Chrome {{{
 nnoremap <silent> <Leader>gf :silent !start C:\Users\Pandu\AppData\Local\Google\Chrome\Application\chrome.exe <C-R><C-A><CR>
+" }}}
+" Make {{{
+nnoremap <Home> :w<CR>:!make<CR>
+nnoremap ZM :w<CR>:!make<CR>
+" }}}
+" Markdown to clipboard {{{
+command! MarkdownToClipboard %!markdown | xclip -selection clipboard
 " }}}
 
 

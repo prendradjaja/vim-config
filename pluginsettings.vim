@@ -61,7 +61,13 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
   \ }
 
-
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["custom-snippets", "UltiSnips"]
 
 " Surround
 let g:surround_no_mappings=1
@@ -77,3 +83,7 @@ xmap gR  <Plug>VgSurround
 imap <C-S>  <Plug>Isurround
 imap <C-G>s <Plug>Isurround
 imap <C-G>S <Plug>ISurround
+
+" typescript-tools
+au BufRead,BufNewFile *.ts        setlocal filetype=typescript
+set rtp+=/usr/local/lib/node_modules/typescript-tools
