@@ -1,0 +1,82 @@
+" Vim colour file
+" Maintainer:   Antony Scriven <ad_scriven@postmaster.co.uk>
+" Last Change:  2003-06-12
+" Modified by:  Pandu Rendradjaja. My modifications do not attempt to support 8-color terminals.
+"
+set background=light
+hi clear
+if exists("syntax_on")
+        syntax reset
+endif
+
+let colors_name = "8-bit-autumn"
+
+hi  Normal        gui=none         guifg=00       guibg=255
+hi  Cursor        gui=none         guifg=00       guibg=255
+hi  DiffAdd       gui=none         guifg=255      guibg=04
+hi  DiffChange    gui=none         guifg=255      guibg=05
+hi  DiffDelete    gui=none         guifg=SKYBLUE  guibg=06
+hi  difftext      gui=bold         guifg=255      guibg=09
+hi  Directory     gui=none         guifg=09       guibg=255
+hi  ErrorMsg      gui=none         guifg=255      guibg=DARKRED
+hi  Folded        gui=none         guifg=04       guibg=07
+hi  FoldColumn    gui=none         guifg=04       guibg=248
+hi  IncSearch     gui=none         guifg=11       guibg=02
+hi  lCursor       gui=none         guifg=00       guibg=14
+hi  LineNr        gui=none         guifg=DARKRED  guibg=251
+hi  ModeMsg       gui=none         guifg=28       guibg=151
+hi  MoreMsg       gui=none         guifg=02       guibg=255
+hi  Question      gui=none         guifg=02       guibg=255
+hi  Search        gui=none         guifg=00       guibg=11
+hi  SpecialKey    gui=none         guifg=SKYBLUE  guibg=255
+hi  NonText       gui=none         guifg=242      guibg=255
+hi  StatusLine    gui=none         guifg=94       guibg=186
+hi  Title         gui=none         guifg=05       guibg=255
+hi  Visual        gui=none         guifg=00       guibg=120
+hi  VertSplit     gui=none         guifg=242      guibg=242
+hi  StatusLineNC  gui=none         guifg=242      guibg=07
+hi  Comment       gui=none         guifg=DARKRED  guibg=253
+hi  VisualNOS     gui=none         guifg=248      guibg=00
+hi  WarningMsg    gui=none         guifg=09       guibg=255
+hi  WildMenu      gui=none         guifg=04       guibg=11
+"
+hi  Constant      gui=none         guifg=DARKRED  guibg=bg
+hi  Special       gui=none         guifg=06       guibg=255
+hi  identifier    gui=none         guifg=05       guibg=255
+hi  statement     gui=none         guifg=02       guibg=255
+hi  preproc       gui=none         guifg=242      guibg=255
+hi  type          gui=none         guifg=130      guibg=255
+hi  underlined    gui=underline    guifg=05       guibg=255
+hi  Ignore        gui=none         guifg=07       guibg=255
+hi  todo          gui=none         guifg=11       guibg=130
+hi  function      gui=none         guifg=SKYBLUE  guibg=255
+"
+hi  ColorColumn   guibg=LIGHTGREY
+hi  CursorLine    guibg=11
+
+hi link String          Constant
+hi link Character       Constant
+hi link Number          Constant
+hi link Boolean         Constant
+hi link Float           Number
+hi link Conditional     Statement
+hi link Repeat          Statement
+hi link Label           Statement
+hi link Operator        Statement
+hi link Keyword         Statement
+hi link Exception       Statement
+hi link Include         PreProc
+hi link Define          PreProc
+hi link Macro           PreProc
+hi link PreCondit       PreProc
+hi link StorageClass    Type
+hi link Structure       Type
+hi link Typedef         Type
+hi link Tag             Special
+hi link SpecialChar     Special
+hi link Delimiter       Special
+hi link SpecialComment  Special
+hi link Debug           Special
+hi link vimfunction     function
+
+"  vim:  set  ts=8  sw=8  et  sts=8  tw=72  fo-=t  ff=unix  :
