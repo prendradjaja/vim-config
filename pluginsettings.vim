@@ -87,3 +87,6 @@ imap <C-G>S <Plug>ISurround
 " typescript-tools
 au BufRead,BufNewFile *.ts        setlocal filetype=typescript
 set rtp+=/usr/local/lib/node_modules/typescript-tools
+
+" RSI
+" iunmap <C-D>
