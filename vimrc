@@ -167,6 +167,11 @@ if v:version >= 700
 endif
 " Open curly-brace block -- open a new {} block and enter insert mode
 nnoremap <Leader>oc A {<CR>}<Esc>O
+" Use U for redo
+nnoremap U <C-R>
+nnoremap <C-R> :foobar
+" Hacky shift-tab to untab
+inoremap <S-Tab> <Backspace><Backspace><Backspace><Backspace>
 " }}}
 " Space as leader {{{
 " Use default (backslash) as leader, but map spacebar to it. This way, I can
