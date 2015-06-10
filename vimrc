@@ -169,7 +169,6 @@ endif
 nnoremap <Leader>oc A {<CR>}<Esc>O
 " Use U for redo
 nnoremap U <C-R>
-nnoremap <C-R> :foobar
 " Hacky shift-tab to untab
 inoremap <S-Tab> <Backspace><Backspace><Backspace><Backspace>
 " }}}
@@ -246,8 +245,6 @@ noremap : ,
 " s for /
 noremap s /
 noremap S ?
-noremap / <nop>
-noremap ? <nop>
 " _ for ^
 noremap _ ^
 noremap ^ <nop>
