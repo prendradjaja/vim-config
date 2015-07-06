@@ -10,6 +10,9 @@ command! -range Reverse call Reverse(<line1>, <line2>)
 " Dummy text: Range
 command! -nargs=1 Range call append(line('.'), range(1, <args>))
 
+" Count occurences
+" Usage: either use :Count PATTERN or :Count to use last pattern
+command! -nargs=? Count %s/<args>//gn
 
 
 " *** Implement complex behavior below this line *************************** "
