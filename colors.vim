@@ -11,7 +11,16 @@ function! DefaultColors()
 endfunction
 command! DefaultColors call DefaultColors()
 
-if !has('gui_running')
-    Autumn
-    " DefaultColors
+function! Solarized()
+  set background=dark
+  colorscheme solarized
+endfunction
+command! Solarized call Solarized()
+
+if has('gui_running')
+  " colorscheme 8-bit-autumn
+  Solarized
+else
+  " Autumn
+  DefaultColors
 endif
