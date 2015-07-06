@@ -33,6 +33,8 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'jason0x43/vim-js-indent'
+Bundle 'ciaranm/detectindent'
+Bundle 'junegunn/vim-easy-align'
 " }}}
 " Fix runtimepath on Windows {{{
 set runtimepath^=~/.vim

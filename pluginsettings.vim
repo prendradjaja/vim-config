@@ -90,3 +90,14 @@ set rtp+=/usr/local/lib/node_modules/typescript-tools
 
 " RSI
 " iunmap <C-D>
+
+" detectindent
+nnoremap <Leader>ia :DetectIndent<CR>
+
+" easy-align
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" Ordinary ga still available
+nnoremap <Leader>ga ga
