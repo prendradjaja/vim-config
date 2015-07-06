@@ -1,4 +1,4 @@
-set guioptions=i
+set guioptions=ir
 
 " GUI save and open
 nnoremap <M-w> :browse write<CR>
