@@ -6,3 +6,43 @@ $1: $2
 clean:
 	$4
 endsnippet
+
+snippet tcoffee
+$1.js: $1.coffee
+	coffee -c $1.coffee
+
+.PHONY: clean
+clean:
+	rm $1.js
+endsnippet
+
+snippet tc
+$1: $1.c
+	gcc $1.c -o $1
+
+.PHONY: clean
+clean:
+	rm $1
+endsnippet
+
+snippet tjava
+$1.class: $1.java
+	javac $1.java
+
+.PHONY: clean
+clean:
+	rm $1.class
+endsnippet
+
+snippet tlatex
+$1.pdf: $1.tex
+	latexmk $1.tex -pdf
+
+.PHONY: clean rmaux
+clean:
+	latexmk -c
+	rm $1.pdf
+
+rmaux:
+	latexmk -c
+endsnippet

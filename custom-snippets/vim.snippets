@@ -1,0 +1,6 @@
+snippet cmd
+function! $1()
+	$2
+endfunction
+command! $1 call $1()
+endsnippet
