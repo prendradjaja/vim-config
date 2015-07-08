@@ -21,7 +21,6 @@ filetype off
 set runtimepath^=~/.vim/bundle/vundle
 call vundle#rc()
 " }}}
-Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rsi'
 Bundle 'tpope/vim-repeat'
