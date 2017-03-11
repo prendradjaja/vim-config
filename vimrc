@@ -242,7 +242,7 @@ noremap ! ~
 noremap g! g~
 " , and :
 noremap , :
-noremap : ,
+" noremap : ,
 " s for /
 noremap s /
 noremap S ?
