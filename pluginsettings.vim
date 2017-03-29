@@ -7,7 +7,7 @@ vnoremap <silent> <Leader>t :<C-U>VertigoUp v<CR>
 onoremap <silent> <Leader>t :<C-U>VertigoUp o<CR>
 
 let g:Vertigo_homerow = 'aoeuidhtns'
-let g:Vertigo_onedigit_method = 'smart4'
+" let g:Vertigo_onedigit_method = 'smart4'
 
 " TComment
 call tcomment#DefineType('twoslashes', '// %s' )
