@@ -17,3 +17,25 @@ endsnippet
 snippet #!
 #!/usr/bin/env python3
 endsnippet
+
+snippet cltest
+class Test$1(unittest.testCase):
+	$2
+endsnippet
+
+snippet test
+def test_$1(self):
+	$2
+endsnippet
+
+snippet tests
+import unittest
+$1
+
+class Test$2(unittest.testCase):
+	def test_$3(self):
+		$4
+
+if __name__ == '__main__':
+	unittest.main()
+endsnippet
