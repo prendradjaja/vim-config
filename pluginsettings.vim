@@ -6,6 +6,7 @@ nnoremap <silent> <Leader>t :<C-U>VertigoUp n<CR>
 vnoremap <silent> <Leader>t :<C-U>VertigoUp v<CR>
 onoremap <silent> <Leader>t :<C-U>VertigoUp o<CR>
 
+let g:QuickOpen_homerow = 'aoeuidhtns'
 let g:Vertigo_homerow = 'aoeuidhtns'
 " let g:Vertigo_onedigit_method = 'smart4'
 
