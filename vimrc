@@ -58,6 +58,7 @@ runtime editbinary.vim
 runtime oldenglish.vim
 runtime german.vim
 runtime s-exp.vim
+runtime quickopen.vim
 " }}}
 
 " }}}
