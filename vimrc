@@ -147,6 +147,7 @@ nnoremap zy zb8<C-E>
 nnoremap <Leader>ds :s/\s\+$//<CR>
 vnoremap <Leader>ds :s/\s\+$//<CR>
 " 78-char, 72-char limits
+nnoremap <silent> <Leader>9 :CharLimit 100<CR>
 nnoremap <silent> <Leader>8 :CharLimit 78<CR>
 nnoremap <silent> <Leader>7 :CharLimit 72<CR>
 nnoremap <silent> <Leader>0 :set cc= tw=0<CR>:echo "no~charLimit"<CR>
@@ -357,4 +358,11 @@ let g:vimrc_loaded = 1
 
 " *** Sandbox area below this line ***************************************** "
 
+nnoremap <Leader>co :syntax off<CR>
+nnoremap <Leader>ca :w !xsel --clipboard<CR>
 
+function! ReorderingMode()
+  nnoremap { :m--<CR>
+  nnoremap } :m+<CR>
+endfunction
+command! ReorderingMode call ReorderingMode()
