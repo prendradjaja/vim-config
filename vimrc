@@ -77,6 +77,14 @@ set hidden
 set autochdir
 set fileformat=unix
 set wildmode=list:longest,full
+
+" nofixeol preserves missing EOL at end of textfile on save: If this doesn't
+" work, see:
+" - https://stackoverflow.com/questions/14841899/how-to-save-a-text-file-with-noeol-and-in-dos-format-using-vi-on-a-linux-system
+" - http://vim.wikia.com/wiki/Preserve_missing_end-of-line_at_end_of_text_files
+" The feature was added in Vim 7.4.785
+set nofixeol
+
 " }}}
 " Info {{{
 set ruler
