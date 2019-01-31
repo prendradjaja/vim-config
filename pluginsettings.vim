@@ -10,7 +10,7 @@ let g:Vertigo_homerow = 'aoeuidhtns'
 " let g:Vertigo_onedigit_method = 'smart4'
 
 " TComment
-call tcomment#DefineType('twoslashes', '// %s' )
+call tcomment#type#Define('twoslashes', '// %s' )
 nnoremap <C-_>/ :TCommentAs twoslashes<CR>
 vnoremap <C-_>/ :TCommentAs twoslashes<CR>
 nnoremap <Leader>_/ :TCommentAs twoslashes<CR>
