@@ -348,4 +348,16 @@ let g:vimrc_loaded = 1
 
 " *** Sandbox area below this line ***************************************** "
 
+nnoremap cif ggcG
+nnoremap <leader>p :set paste!<CR>:set paste?<CR>
+set breakindent
+nnoremap <leader>sh :syntax off<CR>
+nnoremap <leader>SH :syntax on<CR>
+nnoremap <leader>sH :syntax on<CR>
 
+function! Only()
+  ? it(
+  normal! _la.only
+  write
+endfunction
+command! Only call Only()
