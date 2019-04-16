@@ -206,15 +206,15 @@ nnoremap <C-J> <C-W>j
 " }}}
 " Quickly change some often-used settings {{{
 " Indent size
-nnoremap <silent> <Leader>i1 :set ts=1 sw=1<CR>:echo "  sw,tw=1"<CR>
-nnoremap <silent> <Leader>i2 :set ts=2 sw=2<CR>:echo "  sw,tw=2"<CR>
-nnoremap <silent> <Leader>i3 :set ts=3 sw=3<CR>:echo "  sw,tw=3"<CR>
-nnoremap <silent> <Leader>i4 :set ts=4 sw=4<CR>:echo "  sw,tw=4"<CR>
-nnoremap <silent> <Leader>i5 :set ts=5 sw=5<CR>:echo "  sw,tw=5"<CR>
-nnoremap <silent> <Leader>i6 :set ts=6 sw=6<CR>:echo "  sw,tw=6"<CR>
-nnoremap <silent> <Leader>i7 :set ts=7 sw=7<CR>:echo "  sw,tw=7"<CR>
-nnoremap <silent> <Leader>i8 :set ts=8 sw=8<CR>:echo "  sw,tw=8"<CR>
-nnoremap <silent> <Leader>i9 :set ts=9 sw=9<CR>:echo "  sw,tw=9"<CR>
+nnoremap <silent> <Leader>i1 :set ts=1 sw=1<CR>:echo "  sw,ts=1"<CR>
+nnoremap <silent> <Leader>i2 :set ts=2 sw=2<CR>:echo "  sw,ts=2"<CR>
+nnoremap <silent> <Leader>i3 :set ts=3 sw=3<CR>:echo "  sw,ts=3"<CR>
+nnoremap <silent> <Leader>i4 :set ts=4 sw=4<CR>:echo "  sw,ts=4"<CR>
+nnoremap <silent> <Leader>i5 :set ts=5 sw=5<CR>:echo "  sw,ts=5"<CR>
+nnoremap <silent> <Leader>i6 :set ts=6 sw=6<CR>:echo "  sw,ts=6"<CR>
+nnoremap <silent> <Leader>i7 :set ts=7 sw=7<CR>:echo "  sw,ts=7"<CR>
+nnoremap <silent> <Leader>i8 :set ts=8 sw=8<CR>:echo "  sw,ts=8"<CR>
+nnoremap <silent> <Leader>i9 :set ts=9 sw=9<CR>:echo "  sw,ts=9"<CR>
 " Toggle expandtab
 nnoremap <Leader>et :set et!<CR>:set et?<CR>
 " Toggle wrapping
@@ -355,9 +355,25 @@ nnoremap <leader>sh :syntax off<CR>
 nnoremap <leader>SH :syntax on<CR>
 nnoremap <leader>sH :syntax on<CR>
 
-function! Only()
-  ? it(
-  normal! _la.only
-  write
+" function! Only()
+"   ? it(
+"   normal! _la.only
+"   write
+" endfunction
+" command! Only call Only()
+
+hi Folded ctermbg=black ctermfg=yellow
+hi Comment ctermfg=darkcyan
+
+function! Todo()
+  set sw=2
+  set ts=2
+  set fdm=indent
+  set noacd
+  e ~/c/notes/tickets/reg-prompt
+  source ~/.vim/syntax-todo/syntax-todo.vim
 endfunction
-command! Only call Only()
+command! Todo call Todo()
+
+nnoremap <scrollwheelup> <c-y>
+nnoremap <scrollwheeldown> <c-e>
