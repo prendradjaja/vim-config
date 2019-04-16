@@ -34,6 +34,9 @@ if !exists("did_todo_syntax_inits")
   hi link matttodo tTodo
   hi default tTodo ctermfg=DarkYellow
 
+  hi LineNr ctermfg=Gray
+  hi CursorLineNr ctermfg=Gray
+
 endif
 
 let b:current_syntax="todo"
