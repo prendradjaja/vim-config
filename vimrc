@@ -370,6 +370,7 @@ function! Todo()
   set ts=2
   " set fdm=indent
   set noacd
+  e ~/notes/todo
   source ~/.vim/syntax-todo/syntax-todo.vim
 endfunction
 command! Todo call Todo()
