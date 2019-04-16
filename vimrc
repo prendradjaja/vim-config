@@ -368,9 +368,8 @@ hi Comment ctermfg=darkcyan
 function! Todo()
   set sw=2
   set ts=2
-  set fdm=indent
+  " set fdm=indent
   set noacd
-  e ~/c/notes/tickets/reg-prompt
   source ~/.vim/syntax-todo/syntax-todo.vim
 endfunction
 command! Todo call Todo()
