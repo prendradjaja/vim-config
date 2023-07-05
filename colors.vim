@@ -24,3 +24,5 @@ else
   " Autumn
   DefaultColors
 endif
+
+" Some local (crunchbase-bertino) changes in vimrc

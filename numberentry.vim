@@ -10,6 +10,7 @@ function! NumberEntryModeOn()
   inoremap t 8
   inoremap n 9
   inoremap s 0
+  inoremap , :
   inoremap <Space> -
   echo "  ~numberEntryMode"
 endfunction
@@ -25,6 +26,7 @@ function! NumberEntryModeOff()
   iunmap t
   iunmap n
   iunmap s
+  inoremap ,
   iunmap <Space>
   echo "no~numberEntryMode"
 endfunction

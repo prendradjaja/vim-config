@@ -26,14 +26,16 @@ Bundle 'tpope/vim-rsi'
 Bundle 'tpope/vim-repeat'
 Bundle 'prendradjaja/vim-vertigo'
 Bundle 'sk1418/Join'
-Bundle 'kana/vim-submode'
+" Bundle 'kana/vim-submode'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'SirVer/ultisnips'
+" Disabled bc of some bug urgh
+" Bundle 'SirVer/ultisnips'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'jason0x43/vim-js-indent'
 Bundle 'ciaranm/detectindent'
 Bundle 'junegunn/vim-easy-align'
+Bundle 'neoclide/jsonc.vim'
 " }}}
 " Fix runtimepath on Windows {{{
 set runtimepath^=~/.vim
@@ -53,7 +55,7 @@ runtime commands.vim
 runtime functions.vim
 runtime folds.vim
 runtime colors.vim
-runtime submodemappings.vim
+" runtime submodemappings.vim
 runtime editbinary.vim
 runtime oldenglish.vim
 runtime german.vim
@@ -86,8 +88,8 @@ set wildmenu
 
 " Tabbing {{{
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 " }}}
 " Other text manipulation {{{
 set autoindent
@@ -114,6 +116,7 @@ set nowrap
 " Line numbering {{{
 if exists('&relativenumber')
   set relativenumber
+  set number
 else
   set number
 endif
@@ -138,6 +141,7 @@ nnoremap zy zb8<C-E>
 nnoremap <Leader>ds :s/\s\+$//<CR>
 vnoremap <Leader>ds :s/\s\+$//<CR>
 " 78-char, 72-char limits
+nnoremap <silent> <Leader>9 :CharLimit 100<CR>
 nnoremap <silent> <Leader>8 :CharLimit 78<CR>
 nnoremap <silent> <Leader>7 :CharLimit 72<CR>
 nnoremap <silent> <Leader>0 :set cc= tw=0<CR>:echo "no~charLimit"<CR>
@@ -218,7 +222,7 @@ nnoremap <silent> <Leader>i9 :set ts=9 sw=9<CR>:echo "  sw,ts=9"<CR>
 " Toggle expandtab
 nnoremap <Leader>et :set et!<CR>:set et?<CR>
 " Toggle wrapping
-nnoremap <Leader>sw :set wrap!<CR>
+nnoremap <Leader>sw :set wrap!<CR>:set wrap?<CR>
 " Toggle list (show whitespace)
 nnoremap <Leader>lt :set list!<CR>:set list?<CR>
 " Virtual edit
@@ -298,8 +302,18 @@ nnoremap <Leader>dn :call NumberEntryModeOff()<CR>
 nnoremap <silent> <Leader>gf :silent !start C:\Users\Pandu\AppData\Local\Google\Chrome\Application\chrome.exe <C-R><C-A><CR>
 " }}}
 " Make {{{
-nnoremap <Home> :w<CR>:!make<CR>
-nnoremap ZM :w<CR>:!make<CR>
+nnoremap <Home> :w<CR>:MyMake<CR>
+nnoremap zm :w<CR>:MyMake<CR>
+nnoremap zb :w<CR>:MyMake<CR>
+nnoremap ZM :w<CR>:MyMake<CR>
+nnoremap ZE :w<CR>:MyMake "example"<CR>
+nnoremap ZU :w<CR>:!myrun %<CR>
+" nnoremap ZM :w<CR>:!myrun %<CR>
+" nnoremap ZB :w<CR>:!myrun %<CR>
+nnoremap ZB :w<CR>:MyMake<CR>
+nnoremap ZC :w<CR>:MyMake "copy-last"<CR>
+nnoremap ZW :w<CR>:bd<CR>
+nnoremap ZT :w<CR>:MyMake "test"<CR>
 " }}}
 " Markdown to clipboard {{{
 command! MarkdownToClipboard %!markdown | xclip -selection clipboard
@@ -308,7 +322,8 @@ command! MarkdownToClipboard %!markdown | xclip -selection clipboard
 
 " *** Implement complex behavior here ****************************** {{{ *** "
 
-command! -nargs=1 CharLimit let &colorcolumn=join(range(<args>+1,999),",")|set textwidth=<args>|echo "  ~<args>charLimit"
+" command! -nargs=1 CharLimit let &colorcolumn=join(range(<args>+1,999),",")|set textwidth=<args>|echo "  ~<args>charLimit"
+command! -nargs=1 CharLimit let &colorcolumn=<args>+1|set textwidth=<args>|echo "  ~<args>charLimit"
 
 function! ToggleNumber()
   if &number || &relativenumber
@@ -371,9 +386,145 @@ function! Todo()
   " set fdm=indent
   set noacd
   e ~/notes/todo
-  source ~/.vim/syntax-todo/syntax-todo.vim
+  Todosyntax
+  nnoremap ZM :w<CR>:!cd ~/notes; make<CR>
 endfunction
 command! Todo call Todo()
 
+function! Todosyntax()
+  source ~/.vim/syntax-todo/syntax-todo.vim
+endfunction
+command! Todosyntax call Todosyntax()
+
+" function! Journal()
+"   " set noacd
+"   e ~/journal/README.md
+"   nnoremap ZM :w<CR>:!cd ~/journal; make<CR>
+" endfunction
+" command! Journal call Journal()
+
+
+
+
+
+
 nnoremap <scrollwheelup> <c-y>
 nnoremap <scrollwheeldown> <c-e>
+
+" Copy all
+nnoremap <Leader>ca :w !pbcopy<CR>
+" Copy line
+nnoremap <Leader>cc 0"+y$
+
+nnoremap ZP :!make push<CR>
+
+command! -range Copy <line1>,<line2>w !pbcopy
+vnoremap <Leader>ca :Copy<CR>
+
+nnoremap ZV :w<CR>
+nnoremap gt ,
+
+function! CustomIndentFold()
+  setlocal foldexpr=CustomIndentFoldExpr()
+  setlocal foldmethod=expr
+  setlocal foldignore=
+endfunction
+command! CustomIndentFold call CustomIndentFold()
+
+func! CustomIndentFoldExpr() abort
+  let line = getline(v:lnum)
+  if line =~? '^\s*$'
+    return -1
+  endif
+
+  let indent = indent(v:lnum) / &sw
+  let indent_next = indent(nextnonblank(v:lnum+1))/&sw
+
+  if indent_next > indent && line =~ ':\s*$'
+    return ">" . indent_next
+  else
+    return indent
+  endif
+endfunc
+
+function! ReorderMode()
+  nnoremap K :m-2<CR>
+  nnoremap J :m+1<CR>
+endfunction
+command! ReorderMode call ReorderMode()
+
+function! VoteMode()
+  Todosyntax
+  nnoremap 1 0c2lx1<esc>
+  nnoremap 2 0c2l-5<esc>
+  nnoremap 3 0c2l/9<esc>
+  nnoremap 4 0c2l. <esc>
+endfunction
+command! VoteMode call VoteMode()
+
+set nofileignorecase
+
+function! ConflictMode()
+  setlocal filetype=
+  runtime conflict.vim
+endfunction
+command! ConflictMode call ConflictMode()
+
+nnoremap <Leader>ch :ConflictMode<CR>
+
+function! MyMake(...)
+  if filereadable("Makefile")
+    exec '!make ' . join(a:000)
+  else
+    if a:0 == 0
+      exec '!npm run start'
+    else
+      exec '!npm run ' . join(a:000)
+    endif
+  endif
+endfunction
+command! -nargs=? MyMake call MyMake(<args>)
+
+command! Prettier silent %!npx prettier --stdin-filepath %
+
+hi Search cterm=NONE ctermfg=grey ctermbg=blue
+hi MatchParen cterm=NONE ctermfg=grey ctermbg=green
+
+nnoremap <Leader>vp `[v`]
+nnoremap <Leader>Vp `[V`]
+
+" Delete a function
+nmap drf dt(dr(
+" Change a function
+nmap crf drfi
+
+nnoremap <Leader>; ,
+
+function! RearrangementMode()
+  nnoremap J :m+1<CR>
+  nnoremap K :m-2<CR>
+endfunction
+command! RearrangementMode call RearrangementMode()
+
+function! Listify()
+  normal! I['
+  normal! A']
+  s/ /', '/g
+endfunction
+command! Listify call Listify()
+
+function! Pymain()
+  append
+
+
+if __name__ == '__main__':
+    import doctest
+    failures, tests = doctest.testmod()
+    if failures:
+        exit()
+    main()
+.
+endfunction
+command! Pymain call Pymain()
+
+iabbr _ppt [print the periodic table]

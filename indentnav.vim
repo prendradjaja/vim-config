@@ -14,9 +14,9 @@ onoremap <silent> <M-p> :call NextIndent(1, 0, 1, 1)<CR>
 onoremap <silent> <M-P> :call NextIndent(1, 1, 1, 1)<CR>
 
 " The most recently used of the above is 'go to parent'
-nnoremap <silent> g<c-p> :call NextIndent(0, 0, 1, 1)<CR>^
-vnoremap <silent> g<c-p> <Esc>:call NextIndent(0, 0, 1, 1)<CR>m'gv''
-onoremap <silent> g<c-p> :call NextIndent(1, 0, 1, 1)<CR>
+nnoremap <silent> <leader>gp :call NextIndent(0, 0, 1, 1)<CR>^
+vnoremap <silent> <leader>gp <Esc>:call NextIndent(0, 0, 1, 1)<CR>m'gv''
+onoremap <silent> <leader>gp :call NextIndent(1, 0, 1, 1)<CR>
 
 nmap <silent> <M-S> <M-s>zt
 nmap <silent> <M-N> <M-n>zt

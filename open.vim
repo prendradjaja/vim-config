@@ -1,10 +1,12 @@
 " A bunch of mappings for opening new lines in various ways
 
-" With no indent -- 2 below, 1 below, 1 above, 2 above
+" With no indent -- 3 below, 2 below, 1 below, 1 above, 2 above, 3 above
+nnoremap <Leader>oen o<Esc>o<Esc>o
 nnoremap <Leader>on o<Esc>o
 nnoremap <Leader>od o<Esc>i
 nnoremap <Leader>oD O<Esc>i
 nnoremap <Leader>ou O<Esc>O
+nnoremap <Leader>oeu O<Esc>O<Esc>O
 
 " 20 lines below, keeping cursor position
 nnoremap <Leader>os ma20o<Esc>`a
